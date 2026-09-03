@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatterBox — Sandy Zhao</title>
+<meta name="description" content="Case study: a mixed modality product to foster and gamify in-class discussion for Grade 10-12 literature students.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grid-lines" aria-hidden="true"></div>
+
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <p class="name"><a href="index.html" style="color:inherit;">Sandy Zhao</a></p>
+
+      <nav class="side-nav" aria-label="Section navigation">
+        <a href="index.html#about"><span class="idx">[01]</span> About</a>
+        <a href="index.html#work" class="active"><span class="idx">[02]</span> Selected Works</a>
+        <a href="index.html#publications"><span class="idx">[03]</span> Publications</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-placeholder" aria-hidden="true"></div>
+
+    <div class="sidebar-brief">
+      <div class="tldr">
+        <p class="micro-label">[TL;DR]</p>
+        <p>A mixed modality product to foster and gamify in-class discussion for Grade 10 - 12 students in literature class. The product includes a student interface, a teacher interface. Tool is designed to follow closely to educational standards as all prompts on cards are derived from state educational standard.</p>
+      </div>
+
+      <a class="mini-course-link" href="#">[Onboarding Mini-Course for ChatterBox]</a>
+
+      <div class="preview-links">
+        <a href="#" target="_blank" rel="noopener">[LinkedIn]</a>
+        <a href="#" target="_blank" rel="noopener">[Resume]</a>
+        <a href="mailto:sandyzhao.work@gmail.com">[Contact]</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <div class="case-title-block">
+      <p class="case-eyebrow">Learning Product Design|K-12|Use in class</p>
+      <h1 class="case-title">ChatterBox</h1>
+    </div>
+
+    <div class="case-meta-row">
+      <div class="case-meta-item">
+        <p class="micro-label">[Skills]</p>
+        <p>Learning Product Design</p>
+        <p>User Experience Research</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="micro-label">[Project Company]</p>
+        <p>City of Bridges High School</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="micro-label">[Role]</p>
+        <p>Lead Researcher &amp; Product Designer</p>
+      </div>
+    </div>
+
+    <div class="glance">
+      <p class="glance-label cb-final-label">[The final product]</p>
+
+      <div class="cb-showcase">
+        <div class="cb-card prompt">
+          <div class="cb-card-head">
+            <span class="cb-card-plus">+1</span>
+            <span class="cb-card-label">Prompt<br>Card</span>
+          </div>
+          <p class="cb-card-body">What are some links between this reading and themes you&rsquo;ve talked about in other classes?</p>
+        </div>
+
+        <div class="cb-card free">
+          <div class="cb-card-head">
+            <span class="cb-card-plus">+1</span>
+            <span class="cb-card-label">Free<br>Card</span>
+          </div>
+          <p class="cb-card-body">Use this card to speak your mind!</p>
+        </div>
+
+        <div class="cb-device cb-phone">
+          <div class="cb-screen">
+            <img src="assets/chatterbox/phone-screen.png" alt="ChatterBox student app screen showing a good morning greeting, an upcoming session card, and past sessions.">
+          </div>
+          <img class="cb-frame" src="assets/chatterbox/phone-frame.png" alt="">
+        </div>
+
+        <div class="cb-device cb-ipad">
+          <div class="cb-screen">
+            <img src="assets/chatterbox/ipad-screen.png" alt="ChatterBox teacher dashboard showing a discussion session with student interaction graph and participation table.">
+          </div>
+          <img class="cb-frame" src="assets/chatterbox/ipad-frame.png" alt="">
+        </div>
+
+        <div class="cb-card instructor">
+          <div class="cb-card-head">
+            <span class="cb-card-plus">+2</span>
+            <span class="cb-card-label">Instructor<br>Card</span>
+          </div>
+          <p class="cb-card-body">Use me when you talk about the prompts from the instructor that are written on the whiteboard.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cb-problem-row">
+      <div class="cb-problem-col">
+        <p class="micro-label">[The Problem]</p>
+        <p>Instructor from the City of Bridges High School approached us to seek ways to improve in-class discussion for their literature class.</p>
+      </div>
+      <div class="cb-problem-col">
+        <p class="micro-label">[Specifically]</p>
+        <ol>
+          <li>Students need the tool to balance in-class discussion</li>
+          <li>Instructor need to tool to track student performance in discussions</li>
+          <li>Instructor need the tool to help keep students on topic for discussion and maintain alignment of discussion with learning goals</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="cb-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 1]</p>
+        <p><strong>Limited usage of technology in class</strong></p>
+        <p>As the user for this product are high-school students, we avoided overly relying on a device during the class to avoid possible distractions in class.</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 1 - Playing Cards]</p>
+        <p>While students and teacher can access their course data post-session, the in-class section of the tool uses only cards with NFC chips embedded. This helps keep students&rsquo; focus on the task, while enabling introduction of technology in the classroom.</p>
+      </div>
+    </div>
+
+    <div class="cb-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 2]</p>
+        <p><strong>Balancing Discussions</strong></p>
+        <p>While some students are reserved and reticent, other students jump to the opportunity to express their opinions. How do we balance students&rsquo; participation to make everybody heard?</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 2 - Gamification and Pacing]</p>
+        <p>We incorporated gamification by adding points and streak systems to reward active participation. Students can earn points by participating in discussion and selecting a card from their topic that they would like to discuss.</p>
+        <p>As defined by the rules, all students starts with five cards, and can&rsquo;t get a new card from the draw pile until they have played all five. We believe this would make students mindful about their participation frequency, pacing themselves better in participation.</p>
+      </div>
+    </div>
+
+    <div class="cb-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 3]</p>
+        <p><strong>Keeping discussion on topic</strong></p>
+        <p>The instructor has expressed that sometimes the discussion heads to an unexpected direction, and it&rsquo;s hard to redirect the topic.</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 3 - Prompted cards]</p>
+        <p>We categorized the cards to three kinds:</p>
+        <ol style="margin:0 0 8px; padding:0; list-style:decimal; font-size:14px; line-height:1.5;">
+          <li style="margin-left:21px;">Prompt card: Prompt cards include prompts that we wrote, that are closely aligned with PA educational standard for literature discussion.</li>
+          <li style="margin-left:21px;">Free card: Free card gives students the freedom to discuss any related topic as they wanted, adding element of freedom to their discussion.</li>
+          <li style="margin-left:21px;">Instructor card: Instructor cards point to the questions that the instructor has prepared for the class and written on the whiteboard.</li>
+        </ol>
+        <p>With the prompting of these three types of cards, we believe responses from students can be more aligned to their educational requirements and more on topic.</p>
+      </div>
+    </div>
+
+    <div class="xm-section">
+      <div class="xm-intro">
+        <div>
+          <p class="xm-scene-eyebrow">Learner Experience Map</p>
+          <h2 style="margin:8px 0 0; font-family:'Fraunces', Georgia, serif; font-weight:500; font-size:32px; line-height:1.15; letter-spacing:-1px; color:var(--text-primary);">Step through the ChatterBox experience</h2>
+        </div>
+        <p class="xm-credit">Learning Media Design &mdash; team project with <strong>Mufei He</strong>, <strong>Della Ouyang</strong>, <strong>Elizabeth Szeto</strong> &amp; <strong>Sandy Zhao</strong>.</p>
+
+        <div class="xm-problem">
+          <img src="assets/chatterbox/experience-map/problem.png" alt="Sketch of a discussion session with three students, one quiet while two others talk over each other.">
+          <div class="xm-problem-text">
+            <p class="xm-scene-eyebrow">[The Problem]</p>
+            <p>In class, the teacher notices only a few students are speaking up, while others stay quiet, feeling unsure.</p>
+            <p class="xm-problem-quote">&ldquo;I would like a tool that helps people who I know have a lot to contribute&hellip; but don&rsquo;t always feel empowered to share their thoughts, because the dominant voices in the room take up so much space.&rdquo; &mdash; Teacher</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="xm-stepper">
+        <nav class="xm-stages" aria-label="Experience stages">
+          <button type="button" class="xm-stage-btn active" data-target="pre-session"><span class="n">01</span>Pre-Session</button>
+          <button type="button" class="xm-stage-btn" data-target="join"><span class="n">02</span>Join</button>
+          <button type="button" class="xm-stage-btn" data-target="use"><span class="n">03</span>Use</button>
+          <button type="button" class="xm-stage-btn" data-target="leave"><span class="n">04</span>Leave</button>
+          <button type="button" class="xm-stage-btn" data-target="post-session"><span class="n">05</span>Post-Session</button>
+        </nav>
+
+        <div class="xm-scene-wrap">
+
+          <!-- 01 Pre-Session -->
+          <div class="xm-scene active" data-scene="pre-session">
+            <div class="xm-scene-media">
+              <video class="xm-video-sequence" width="1280" height="720" autoplay muted playsinline aria-label="Animation of the ChatterBox game box opening, followed by chips being placed on a card." data-sources="assets/chatterbox/game-box.mp4,assets/chatterbox/card-chips.mp4"></video>
+              <p class="xm-scene-caption">Playing cards are made with embedded NFC chips, while the box itself is embedded with NFC detector to detect the cards when they have been put into the box.</p>
+            </div>
+            <div class="xm-scene-body">
+              <div>
+                <p class="xm-scene-eyebrow">Stage 01</p>
+                <h2 class="xm-scene-title">Pre-Session</h2>
+              </div>
+              <div class="xm-lanes">
+                <div class="xm-lane" data-lane="student">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+                  <div class="xm-lane-items"><p>Preparing for in-class participation by taking notes and annotating while reading books.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="teacher">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+                  <div class="xm-lane-items"><p>Prep questions for instructor-customized cards.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="physical">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+                  <div class="xm-lane-items">
+                    <p>All cards are embedded with NFC chips, and the NFC reader embedded in the basket tracks used cards.</p>
+                    <p>Group the cards based on types to facilitate card distribution.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="backstage">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+                  <div class="xm-lane-items"><p>Pre-formulated cards designed by learning engineers, aligned with PA state educational standards.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 02 Join -->
+          <div class="xm-scene" data-scene="join">
+            <div class="xm-scene-media">
+              <video src="assets/chatterbox/phone-scan-2.mp4" width="1280" height="720" autoplay loop muted playsinline aria-label="A student scanning a QR code on their phone to claim a ChatterBox card."></video>
+              <p class="xm-scene-caption">Students pick cards based on their interests.</p>
+            </div>
+            <div class="xm-scene-body">
+              <div>
+                <p class="xm-scene-eyebrow">Stage 02 &middot; During Session</p>
+                <h2 class="xm-scene-title">Join</h2>
+              </div>
+              <div class="xm-lanes">
+                <div class="xm-lane" data-lane="student">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+                  <div class="xm-lane-items">
+                    <p>Students pick 5 cards based on preference + system recommendation.</p>
+                    <p>Students scan QR codes to claim cards.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="teacher">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+                  <div class="xm-lane-items"><p>Write out questions on the whiteboard.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="physical">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+                  <div class="xm-lane-items">
+                    <p>Cards are linked with student profiles.</p>
+                    <p>Questions displayed on the whiteboard.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="digital">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Digital</span></div>
+                  <div class="xm-lane-items"><p>Students log into the system via the app.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="backstage">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+                  <div class="xm-lane-items"><p>Match students with question cards to prepare for tracking students&rsquo; progress.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 Use -->
+          <div class="xm-scene" data-scene="use">
+            <div class="xm-scene-media">
+              <video class="xm-video-sequence" width="1280" height="720" autoplay muted playsinline aria-label="Players holding ChatterBox cards, then a student drawing a new card from the deck." data-sources="assets/chatterbox/player-hands.mp4,assets/chatterbox/draw-card.mp4"></video>
+              <p class="xm-scene-caption">Students use the cards to actively participate in discussions, sharing their ideas and engaging with classmates in meaningful conversation.</p>
+            </div>
+            <div class="xm-scene-body">
+              <div>
+                <p class="xm-scene-eyebrow">Stage 03 &middot; During Session</p>
+                <h2 class="xm-scene-title">Use</h2>
+              </div>
+              <div class="xm-lanes">
+                <div class="xm-lane" data-lane="student">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+                  <div class="xm-lane-items"><p>Students participate, responding to the prompts and questions.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="teacher">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+                  <div class="xm-lane-items">
+                    <p>Track participation through visual hint of card.</p>
+                    <p>Pace discussion by stopping card redraw for short periods of time.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="physical">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+                  <div class="xm-lane-items">
+                    <p>Card is discarded into basket after use.</p>
+                    <p>Student&rsquo;s deck of cards is reduced by 1.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="digital">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Digital</span></div>
+                  <div class="xm-lane-items"><p>Corresponding participation score added to student dashboard.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="backstage">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+                  <div class="xm-lane-items"><p>NFC sensor detection tracks participation and grants points to recorded student actions.</p></div>
+                </div>
+              </div>
+              <p class="xm-insight">&ldquo;And I was thinking about, how do I show them visually how much or how little they&rsquo;re talking?&rdquo; &mdash; Teacher. Shy students see an opportunity to participate through comparison with classmates; active students stay mindful of their own pace.</p>
+            </div>
+          </div>
+
+          <!-- 04 Leave -->
+          <div class="xm-scene" data-scene="leave">
+            <div class="xm-scene-media">
+              <video src="assets/chatterbox/unused-cards-drop.mp4" width="1280" height="720" autoplay loop muted playsinline aria-label="A student dropping unused ChatterBox cards into the NFC-reader-embedded basket."></video>
+              <p class="xm-scene-caption">After using a card, students drop it into the NFC-reader-embedded basket to earn points toward their profile, where they can track participation progress.</p>
+            </div>
+            <div class="xm-scene-body">
+              <div>
+                <p class="xm-scene-eyebrow">Stage 04 &middot; During Session</p>
+                <h2 class="xm-scene-title">Leave</h2>
+              </div>
+              <div class="xm-lanes">
+                <div class="xm-lane" data-lane="student">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+                  <div class="xm-lane-items"><p>Discard unused cards into the card return box.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="teacher">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+                  <div class="xm-lane-items"><p>Conclude the discussion session on the app once class ends.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="physical">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+                  <div class="xm-lane-items"><p>Students discard unused cards into the empty basket for card re-use.</p></div>
+                </div>
+                <div class="xm-lane" data-lane="backstage">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+                  <div class="xm-lane-items"><p>System automatically detaches the card&ndash;student link after the session.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 Post-Session -->
+          <div class="xm-scene" data-scene="post-session">
+            <div class="xm-scene-media">
+              <video class="xm-portrait-video" src="assets/chatterbox/app-screens-transition.mp4" width="370" height="760" autoplay loop muted playsinline aria-label="Transition between the ChatterBox app's post-session report screens."></video>
+              <p class="xm-scene-caption">After class, the teacher reviews the post-session report to get an overview of the discussion and check student participation levels.</p>
+            </div>
+            <div class="xm-scene-body">
+              <div>
+                <p class="xm-scene-eyebrow">Stage 05</p>
+                <h2 class="xm-scene-title">Post-Session</h2>
+              </div>
+              <div class="xm-lanes">
+                <div class="xm-lane" data-lane="student">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+                  <div class="xm-lane-items">
+                    <p>View the growth dashboard and become motivated to participate more.</p>
+                    <p>View their most-used cards to reflect on how they approach literature.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="teacher">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+                  <div class="xm-lane-items">
+                    <p>Assess student participation levels on the growth board.</p>
+                    <p>Monitor the participation map for participation trends and interaction.</p>
+                    <p>Track card popularity and alignment with educational goals for maximum pedagogical effectiveness.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="digital">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Digital</span></div>
+                  <div class="xm-lane-items">
+                    <p>Display growth dashboard for individual participation performance.</p>
+                    <p>Display participation map and density.</p>
+                    <p>Display card-focused analysis to inform instruction and questioning strategies.</p>
+                  </div>
+                </div>
+                <div class="xm-lane" data-lane="backstage">
+                  <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+                  <div class="xm-lane-items">
+                    <p>Calculate each student&rsquo;s gathered points to display on the growth board.</p>
+                    <p>Track order of students&rsquo; participation from the order cards were discarded into the basket.</p>
+                    <p>Track the most-used cards.</p>
+                  </div>
+                </div>
+              </div>
+              <p class="xm-insight">&ldquo;Monitor topics to conduct formative assessment and align student skills development with PA state educational requirements.&rdquo;</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="xm-controls">
+          <button type="button" class="xm-nav-btn" id="xm-prev">&larr; Previous</button>
+          <div class="xm-dots" id="xm-dots"></div>
+          <button type="button" class="xm-nav-btn" id="xm-next">Next &rarr;</button>
+        </div>
+      </div>
+
+      <div class="xm-resolution">
+        <p class="xm-scene-eyebrow">[Resolution]</p>
+        <div class="xm-resolution-grid">
+          <p>Many students are already accustomed to taking notes and marking down talking points before and during class, making this method non-intrusive.</p>
+          <p>Creating two questions per session allows the instructor to maintain control over the discussion without adding a substantial burden to their responsibilities.</p>
+          <p>Designing cards aligned with PA state requirements fosters formative observation assessment and helps COBHS demonstrate student success.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-section">
+      <p class="micro-label">[Card Catalog]</p>
+      <div class="pf-wrap">
+        <div class="pf-stage-shell">
+          <div class="pf-stage" id="pf-stage"></div>
+        </div>
+        <div class="pf-detail" aria-live="polite" aria-atomic="true">
+          <p class="pf-detail-label" id="pf-detail-label">Hover over a card</p>
+          <p class="pf-detail-code" id="pf-detail-code">&nbsp;</p>
+          <p class="pf-detail-text" id="pf-detail-text">Hover over a card to access the Educational Standard that this card aligns with.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="site-footer" id="site-footer">
+  <div class="footer-columns">
+    <div class="footer-brand">
+      <p class="footer-name">Sandy Zhao</p>
+      <p class="footer-tagline">Instructional Design</p>
+      <p class="footer-tagline">Learning Engineering</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <span class="footer-nav-label">[ Navigation ]</span>
+      <a href="index.html#about"><span class="idx">[01]</span> About</a>
+      <a href="index.html#work"><span class="idx">[02]</span> Selected Works</a>
+      <a href="index.html#publications"><span class="idx">[03]</span> Publications</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span class="copyright">&copy; 2026</span>
+    <a class="back-to-top" href="#top" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});return false;">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReducedMotion) {
+    Array.prototype.slice.call(document.querySelectorAll('.xm-scene-media video')).forEach(function (v) {
+      v.pause();
+      v.removeAttribute('autoplay');
+      v.removeAttribute('loop');
+    });
+  }
+
+  Array.prototype.slice.call(document.querySelectorAll('.xm-video-sequence')).forEach(function (seqVideo) {
+    var sources = seqVideo.getAttribute('data-sources').split(',');
+    var seqIndex = 0;
+    var playNext = function () {
+      seqVideo.src = sources[seqIndex];
+      seqIndex = (seqIndex + 1) % sources.length;
+      if (prefersReducedMotion) return;
+      seqVideo.play().catch(function () {});
+    };
+    seqVideo.addEventListener('ended', playNext);
+    playNext();
+  });
+
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.xm-scene'));
+  var stageBtns = Array.prototype.slice.call(document.querySelectorAll('.xm-stage-btn'));
+  var dotsWrap = document.getElementById('xm-dots');
+  var prevBtn = document.getElementById('xm-prev');
+  var nextBtn = document.getElementById('xm-next');
+  var sceneWrap = document.querySelector('.xm-scene-wrap');
+  var current = 0;
+
+  scenes.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', 'Go to stage ' + (i + 1));
+    dotsWrap.appendChild(dot);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  var TRANSITION_MS = 220;
+  var transitioning = false;
+  var initialized = false;
+
+  function updateChrome() {
+    stageBtns.forEach(function (b, i) { b.classList.toggle('active', i === current); });
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === scenes.length - 1;
+  }
+
+  function show(index) {
+    index = Math.max(0, Math.min(scenes.length - 1, index));
+
+    if (!initialized) {
+      initialized = true;
+      current = index;
+      scenes.forEach(function (s, i) { s.classList.toggle('active', i === current); });
+      updateChrome();
+      return;
+    }
+
+    if (index === current || transitioning) return;
+
+    var direction = index > current ? 'forward' : 'backward';
+    var oldScene = scenes[current];
+    var newScene = scenes[index];
+    transitioning = true;
+
+    var oldHeight = oldScene.offsetHeight;
+
+    newScene.classList.remove('xm-exit-left', 'xm-exit-right', 'xm-enter-left', 'xm-enter-right');
+    newScene.classList.add('active');
+    void newScene.offsetWidth;
+    newScene.classList.add(direction === 'forward' ? 'xm-enter-right' : 'xm-enter-left');
+
+    // Both scenes are position:absolute during the transition (old via
+    // xm-exit-*, new via xm-enter-*), so neither drives xm-scene-wrap's
+    // height on its own. Lock the wrap to the taller of the two so nothing
+    // below the stepper jumps mid-slide, then release it back to auto once
+    // the new scene has settled into normal flow.
+    var newHeight = newScene.offsetHeight;
+    sceneWrap.style.height = Math.max(oldHeight, newHeight) + 'px';
+
+    oldScene.classList.remove('xm-enter-left', 'xm-enter-right');
+    void oldScene.offsetWidth;
+    oldScene.classList.add(direction === 'forward' ? 'xm-exit-left' : 'xm-exit-right');
+
+    current = index;
+    updateChrome();
+    sceneWrap.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest' });
+
+    setTimeout(function () {
+      oldScene.classList.remove('active', 'xm-exit-left', 'xm-exit-right');
+      newScene.classList.remove('xm-enter-left', 'xm-enter-right');
+      sceneWrap.style.height = '';
+      transitioning = false;
+    }, TRANSITION_MS);
+  }
+
+  stageBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { show(i); });
+  });
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () { show(i); });
+  });
+  prevBtn.addEventListener('click', function () { show(current - 1); });
+  nextBtn.addEventListener('click', function () { show(current + 1); });
+
+  show(0);
+})();
+
+(function () {
+  var COLUMNS = 3;
+  var CARDS_PER_COLUMN = 7;
+
+  var DISCUSSION_DESC =
+    "Discussion Connectors are designed to make the discussion smoother while also presenting a less challenging prompt for students to speak up their mind.";
+
+  var CARD_DATA = [
+    { q: "What main idea or themes stood out to you in the reading?",
+      label: "PA Educational Standard", code: "CC.1.3.9–10.A",
+      desc: "Determine a theme or central idea of a text and analyze in detail its development over the course of the text, including how it emerges and is shaped and refined by specific details; provide an objective summary of the text." },
+    { q: "How does [theme] pop up, grow, or change as the story goes along?",
+      label: "PA Educational Standard", code: "CC.1.3.11–12.A",
+      desc: "Determine and analyze the relationship between two or more themes or central ideas of a text, including the development and interaction of the themes; provide an objective summary of the text." },
+    { q: "How does the author bring in themes or topics they've used in other works?",
+      label: "PA Educational Standard", code: "CC.1.3.11–12.C",
+      desc: "Analyze the impact of the author's choices regarding how to develop and relate elements of a story or drama." },
+    { q: "What are some links between this reading and themes you've talked about in other classes?",
+      label: "PA Educational Standard", code: "CC.1.3.9–10.G / CC.1.3.11–12.G",
+      desc: "Analyze the representation of a subject or a key scene in two different artistic mediums, including what is emphasized or absent in each treatment. / Analyze multiple interpretations of a story, drama, or poem (e.g., recorded or live production of a play or recorded novel or poetry), evaluating how each version interprets the source text. (Include at least one play by Shakespeare and one play by an American dramatist.)" },
+    { q: "How does [character] grow or change in this part of the story?",
+      label: "PA Educational Standard", code: "CC.1.3.9–10.C",
+      desc: "Analyze how complex characters develop over the course of a text, interact with other characters, and advance the plot or develop the theme." },
+    { q: "How does [character] interact with others, and how does this connect to [specific theme]?",
+      label: "PA Educational Standard", code: "CC.1.3.11–12.A / CC.1.3.9–10.C",
+      desc: "Determine and analyze the relationship between two or more themes or central ideas of a text, including the development and interaction of the themes; provide an objective summary of the text. / Analyze how complex characters develop over the course of a text, interact with other characters, and advance the plot or develop the theme." },
+    { q: "Who's telling the story, and how does their perspective change how you perceive what's going on?",
+      label: "PA Educational Standard", code: "CC.1.3.9–10.D",
+      desc: "Determine the point of view of the text and analyze the impact the point of view has on the meaning of the text." },
+    { q: "How do the author's choices (eg. tone, wording, POV) shape the narrative?",
+      label: "PA Educational Standard", code: "CC.1.3.11–12.D",
+      desc: "Evaluate how an author's point of view or purpose shapes the content and style of a text." },
+    { q: "What's a quote or part of the reading that grabbed your attention?",
+      label: "PA Educational Standard", code: "CC.1.3.9–10.F / CC.1.3.11–12.F",
+      desc: "Analyze how words and phrases shape meaning and tone in texts. / Evaluate how words and phrases shape meaning and tone in texts." },
+    { q: "How does the story organization (eg. order of events, pace) change the tone or mood?",
+      label: "PA Educational Standard", code: "CC.1.3.9–10.E / CC.1.3.11–12.E",
+      desc: "Analyze how an author's choices concerning how to structure a text, order events within it, and manipulate time create an effect. / Evaluate the structure of texts including how specific sentences, paragraphs, and larger portions of the texts relate to each other and the whole." },
+    { q: "How does the setup of the story help you to get its message or feel its impact?",
+      label: "PA Educational Standard", code: "CC.1.3.11–12.C",
+      desc: "Analyze the impact of the author's choices regarding how to develop and relate elements of a story or drama." },
+    { q: "What are some words or phrases that set the tone or meaning of the story?",
+      label: "PA Educational Standard", code: "CC.1.3.9–10.F / CC.1.3.11–12.F",
+      desc: "Analyze how words and phrases shape meaning and tone in texts. / Evaluate how words and phrases shape meaning and tone in texts." },
+    { q: "Was there anything missing in this work that stood out to you, and how does leaving it out affect the story?",
+      label: null, code: null, desc: null },
+    { q: "What if we looked at [student]'s idea from another point of view?",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC },
+    { q: "Another way to interpret what [student] said is …",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC },
+    { q: "Can we pivot slightly and talk about …",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC },
+    { q: "I agree with what [student] said, …",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC },
+    { q: "I see where [student] is coming from, but I see it differently because …",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC },
+    { q: "Going off of what [student] said …",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC },
+    { q: "One question I had about what [student] brought up is …",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC },
+    { q: "[student]'s comment made me think about …",
+      label: "Discussion Connector", code: null, desc: DISCUSSION_DESC }
+  ];
+
+  var stage = document.getElementById('pf-stage');
+  if (!stage) return;
+
+  var labelEl = document.getElementById('pf-detail-label');
+  var codeEl = document.getElementById('pf-detail-code');
+  var textEl = document.getElementById('pf-detail-text');
+
+  var DEFAULT_LABEL = 'Hover over a card';
+  var DEFAULT_TEXT = 'Hover over a card to access the Educational Standard that this card aligns with.';
+
+  function showDetail(item) {
+    labelEl.textContent = item.label || 'No standard mapped';
+    codeEl.textContent = item.code || ' ';
+    textEl.textContent = item.desc || "This prompt isn't mapped to a standard.";
+  }
+
+  function showDefault() {
+    labelEl.textContent = DEFAULT_LABEL;
+    codeEl.textContent = ' ';
+    textEl.textContent = DEFAULT_TEXT;
+  }
+
+  for (var c = 0; c < COLUMNS; c++) {
+    var fan = document.createElement('div');
+    fan.className = 'pf-fan';
+
+    var colData = CARD_DATA.slice(c * CARDS_PER_COLUMN, (c + 1) * CARDS_PER_COLUMN);
+    colData.forEach(function (item, i) {
+      var card = document.createElement('div');
+      card.className = 'pf-card';
+      card.tabIndex = 0;
+      card.style.setProperty('--i', i);
+      card.style.zIndex = CARDS_PER_COLUMN - i;
+      card.innerHTML =
+        '<div class="pf-card-top"><span class="pf-card-plus">+1</span>' +
+        '<span class="pf-card-title">Prompt<br>Card</span></div>' +
+        '<p class="pf-card-question"></p>';
+      card.querySelector('.pf-card-question').textContent = item.q;
+      card.addEventListener('mouseenter', function () { showDetail(item); });
+      card.addEventListener('focus', function () { showDetail(item); });
+      card.addEventListener('mouseleave', showDefault);
+      card.addEventListener('blur', showDefault);
+      // Touch has no hover/mouseleave equivalent, so route taps through
+      // focus explicitly instead of relying on simulated-hover behavior,
+      // which is inconsistent across mobile browsers and can leave a card
+      // stuck in its lifted state with no way to dismiss it.
+      card.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'touch' || e.pointerType === 'pen') {
+          card.focus();
+        }
+      });
+      fan.appendChild(card);
+    });
+    stage.appendChild(fan);
+  }
+
+  // Base geometry (px, at --pf-scale: 1): padLeft 240 + 3 cards * 178
+  // + 2 gaps * 240 + padRight 60. Scale everything uniformly so the
+  // stage's rendered width exactly fills the section, matching the
+  // Learner Experience Map section above it.
+  var BASE_STAGE_WIDTH = 1314;
+  var wrap = document.querySelector('.pf-wrap');
+  var shell = document.querySelector('.pf-stage-shell');
+
+  function applyScale() {
+    if (!wrap || !shell) return;
+    var scale = shell.clientWidth / BASE_STAGE_WIDTH;
+    scale = Math.max(0.4, Math.min(1.2, scale));
+    wrap.style.setProperty('--pf-scale', scale);
+  }
+
+  applyScale();
+
+  var pfResizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(pfResizeTimer);
+    pfResizeTimer = setTimeout(applyScale, 150);
+  });
+})();
+</script>
+
+</body>
+</html>

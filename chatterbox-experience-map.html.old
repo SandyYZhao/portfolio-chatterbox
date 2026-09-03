@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learner Experience Map — ChatterBox</title>
+<meta name="description" content="A step-by-step walkthrough of the ChatterBox learner experience map — from pre-session prep through post-session reflection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grid-lines" aria-hidden="true"></div>
+
+<div class="xm-page" style="max-width:1100px; margin:0 auto; padding:40px var(--gutter) 80px; display:flex; flex-direction:column; gap:40px; position:relative; z-index:1;">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <a href="chatterbox.html" style="font-size:13px; color:var(--text-secondary); display:inline-flex; align-items:center; gap:6px;">&larr; Back to ChatterBox</a>
+    <a href="index.html" style="font-size:13px; font-weight:600; color:var(--text-primary);">Sandy Zhao</a>
+  </div>
+
+  <div class="xm-intro">
+    <div>
+      <p class="xm-scene-eyebrow">Learner Experience Map</p>
+      <h1 style="margin:8px 0 0; font-family:'Fraunces', Georgia, serif; font-weight:500; font-size:44px; line-height:1.15; letter-spacing:-1.5px; color:var(--text-primary);">Step through the ChatterBox experience</h1>
+    </div>
+    <p class="xm-credit">Learning Media Design &mdash; team project with <strong>Mufei He</strong>, <strong>Della Ouyang</strong>, <strong>Elizabeth Szeto</strong> &amp; <strong>Sandy Zhao</strong>.</p>
+
+    <div class="xm-problem">
+      <img src="assets/chatterbox/experience-map/problem.png" alt="Sketch of a discussion session with three students, one quiet while two others talk over each other.">
+      <div class="xm-problem-text">
+        <p class="xm-scene-eyebrow">[The Problem]</p>
+        <p>In class, the teacher notices only a few students are speaking up, while others stay quiet, feeling unsure.</p>
+        <p class="xm-problem-quote">&ldquo;I would like a tool that helps people who I know have a lot to contribute&hellip; but don&rsquo;t always feel empowered to share their thoughts, because the dominant voices in the room take up so much space.&rdquo; &mdash; Bret</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="xm-stepper">
+    <nav class="xm-stages" aria-label="Experience stages">
+      <button type="button" class="xm-stage-btn active" data-target="pre-session"><span class="n">01</span>Pre-Session</button>
+      <button type="button" class="xm-stage-btn" data-target="join"><span class="n">02</span>Join</button>
+      <button type="button" class="xm-stage-btn" data-target="use"><span class="n">03</span>Use</button>
+      <button type="button" class="xm-stage-btn" data-target="leave"><span class="n">04</span>Leave</button>
+      <button type="button" class="xm-stage-btn" data-target="post-session"><span class="n">05</span>Post-Session</button>
+    </nav>
+
+    <div class="xm-scene-wrap">
+
+      <!-- 01 Pre-Session -->
+      <div class="xm-scene active" data-scene="pre-session">
+        <div class="xm-scene-media">
+          <video class="xm-video-sequence" width="1280" height="720" autoplay muted playsinline aria-label="Animation of the ChatterBox game box opening, followed by chips being placed on a card." data-sources="assets/chatterbox/game-box.mp4,assets/chatterbox/card-chips.mp4"></video>
+          <p class="xm-scene-caption">Playing cards are made with embedded NFC chips, while the box itself is embedded with NFC detector to detect the cards when they have been put into the box.</p>
+        </div>
+        <div class="xm-scene-body">
+          <div>
+            <p class="xm-scene-eyebrow">Stage 01</p>
+            <h2 class="xm-scene-title">Pre-Session</h2>
+          </div>
+          <div class="xm-lanes">
+            <div class="xm-lane" data-lane="student">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+              <div class="xm-lane-items"><p>Preparing for in-class participation by taking notes and annotating while reading books.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="teacher">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+              <div class="xm-lane-items"><p>Prep questions for instructor-customized cards.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="physical">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+              <div class="xm-lane-items">
+                <p>All cards are embedded with NFC chips, and the NFC reader embedded in the basket tracks used cards.</p>
+                <p>Group the cards based on types to facilitate card distribution.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="backstage">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+              <div class="xm-lane-items"><p>Pre-formulated cards designed by learning engineers, aligned with PA state educational standards.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 02 Join -->
+      <div class="xm-scene" data-scene="join">
+        <div class="xm-scene-media">
+          <video src="assets/chatterbox/phone-scan-2.mp4" width="1280" height="720" autoplay loop muted playsinline aria-label="A student scanning a QR code on their phone to claim a ChatterBox card."></video>
+          <p class="xm-scene-caption">Students pick cards based on their interests.</p>
+        </div>
+        <div class="xm-scene-body">
+          <div>
+            <p class="xm-scene-eyebrow">Stage 02 &middot; During Session</p>
+            <h2 class="xm-scene-title">Join</h2>
+          </div>
+          <div class="xm-lanes">
+            <div class="xm-lane" data-lane="student">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+              <div class="xm-lane-items">
+                <p>Students pick 5 cards based on preference + system recommendation.</p>
+                <p>Students scan QR codes to claim cards.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="teacher">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+              <div class="xm-lane-items"><p>Write out questions on the whiteboard.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="physical">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+              <div class="xm-lane-items">
+                <p>Cards are linked with student profiles.</p>
+                <p>Questions displayed on the whiteboard.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="digital">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Digital</span></div>
+              <div class="xm-lane-items"><p>Students log into the system via the app.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="backstage">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+              <div class="xm-lane-items"><p>Match students with question cards to prepare for tracking students&rsquo; progress.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03 Use -->
+      <div class="xm-scene" data-scene="use">
+        <div class="xm-scene-media">
+          <video class="xm-video-sequence" width="1280" height="720" autoplay muted playsinline aria-label="Players holding ChatterBox cards, then a student drawing a new card from the deck." data-sources="assets/chatterbox/player-hands.mp4,assets/chatterbox/draw-card.mp4"></video>
+          <p class="xm-scene-caption">Students use the cards to actively participate in discussions, sharing their ideas and engaging with classmates in meaningful conversation.</p>
+        </div>
+        <div class="xm-scene-body">
+          <div>
+            <p class="xm-scene-eyebrow">Stage 03 &middot; During Session</p>
+            <h2 class="xm-scene-title">Use</h2>
+          </div>
+          <div class="xm-lanes">
+            <div class="xm-lane" data-lane="student">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+              <div class="xm-lane-items"><p>Students participate, responding to the prompts and questions.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="teacher">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+              <div class="xm-lane-items">
+                <p>Track participation through visual hint of card.</p>
+                <p>Pace discussion by stopping card redraw for short periods of time.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="physical">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+              <div class="xm-lane-items">
+                <p>Card is discarded into basket after use.</p>
+                <p>Student&rsquo;s deck of cards is reduced by 1.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="digital">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Digital</span></div>
+              <div class="xm-lane-items"><p>Corresponding participation score added to student dashboard.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="backstage">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+              <div class="xm-lane-items"><p>NFC sensor detection tracks participation and grants points to recorded student actions.</p></div>
+            </div>
+          </div>
+          <p class="xm-insight">&ldquo;And I was thinking about, how do I show them visually how much or how little they&rsquo;re talking?&rdquo; &mdash; Bret. Shy students see an opportunity to participate through comparison with classmates; active students stay mindful of their own pace.</p>
+        </div>
+      </div>
+
+      <!-- 04 Leave -->
+      <div class="xm-scene" data-scene="leave">
+        <div class="xm-scene-media">
+          <video src="assets/chatterbox/unused-cards-drop.mp4" width="1280" height="720" autoplay loop muted playsinline aria-label="A student dropping unused ChatterBox cards into the NFC-reader-embedded basket."></video>
+          <p class="xm-scene-caption">After using a card, students drop it into the NFC-reader-embedded basket to earn points toward their profile, where they can track participation progress.</p>
+        </div>
+        <div class="xm-scene-body">
+          <div>
+            <p class="xm-scene-eyebrow">Stage 04 &middot; During Session</p>
+            <h2 class="xm-scene-title">Leave</h2>
+          </div>
+          <div class="xm-lanes">
+            <div class="xm-lane" data-lane="student">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+              <div class="xm-lane-items"><p>Discard unused cards into the card return box.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="teacher">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+              <div class="xm-lane-items"><p>Conclude the discussion session on the app once class ends.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="physical">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Physical</span></div>
+              <div class="xm-lane-items"><p>Students discard unused cards into the empty basket for card re-use.</p></div>
+            </div>
+            <div class="xm-lane" data-lane="backstage">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+              <div class="xm-lane-items"><p>System automatically detaches the card&ndash;student link after the session.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 Post-Session -->
+      <div class="xm-scene" data-scene="post-session">
+        <div class="xm-scene-media">
+          <video class="xm-portrait-video" src="assets/chatterbox/app-screens-transition.mp4" width="370" height="760" autoplay loop muted playsinline aria-label="Transition between the ChatterBox app's post-session report screens."></video>
+          <p class="xm-scene-caption">After class, the teacher reviews the post-session report to get an overview of the discussion and check student participation levels.</p>
+        </div>
+        <div class="xm-scene-body">
+          <div>
+            <p class="xm-scene-eyebrow">Stage 05</p>
+            <h2 class="xm-scene-title">Post-Session</h2>
+          </div>
+          <div class="xm-lanes">
+            <div class="xm-lane" data-lane="student">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Student</span></div>
+              <div class="xm-lane-items">
+                <p>View the growth dashboard and become motivated to participate more.</p>
+                <p>View their most-used cards to reflect on how they approach literature.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="teacher">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Teacher</span></div>
+              <div class="xm-lane-items">
+                <p>Assess student participation levels on the growth board.</p>
+                <p>Monitor the participation map for participation trends and interaction.</p>
+                <p>Track card popularity and alignment with educational goals for maximum pedagogical effectiveness.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="digital">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Digital</span></div>
+              <div class="xm-lane-items">
+                <p>Display growth dashboard for individual participation performance.</p>
+                <p>Display participation map and density.</p>
+                <p>Display card-focused analysis to inform instruction and questioning strategies.</p>
+              </div>
+            </div>
+            <div class="xm-lane" data-lane="backstage">
+              <div class="xm-lane-tag"><span class="xm-lane-dot"></span><span>Backstage</span></div>
+              <div class="xm-lane-items">
+                <p>Calculate each student&rsquo;s gathered points to display on the growth board.</p>
+                <p>Track order of students&rsquo; participation from the order cards were discarded into the basket.</p>
+                <p>Track the most-used cards.</p>
+              </div>
+            </div>
+          </div>
+          <p class="xm-insight">&ldquo;Monitor topics to conduct formative assessment and align student skills development with PA state educational requirements.&rdquo;</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="xm-controls">
+      <button type="button" class="xm-nav-btn" id="xm-prev">&larr; Previous</button>
+      <div class="xm-dots" id="xm-dots"></div>
+      <button type="button" class="xm-nav-btn" id="xm-next">Next &rarr;</button>
+    </div>
+  </div>
+
+  <div class="xm-resolution">
+    <p class="xm-scene-eyebrow">[Resolution]</p>
+    <div class="xm-resolution-grid">
+      <p>Many students are already accustomed to taking notes and marking down talking points before and during class, making this method non-intrusive.</p>
+      <p>Creating two questions per session allows the instructor to maintain control over the discussion without adding a substantial burden to their responsibilities.</p>
+      <p>Designing cards aligned with PA state requirements fosters formative observation assessment and helps COBHS demonstrate student success.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer" id="site-footer">
+  <div class="footer-columns">
+    <div class="footer-brand">
+      <p class="footer-name">Sandy Zhao</p>
+      <p class="footer-tagline">Instructional Design</p>
+      <p class="footer-tagline">Learning Engineering</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <span class="footer-nav-label">[ Navigation ]</span>
+      <a href="index.html#about"><span class="idx">[01]</span> About</a>
+      <a href="index.html#work"><span class="idx">[02]</span> Selected Works</a>
+      <a href="index.html#publications"><span class="idx">[03]</span> Publications</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span class="copyright">&copy; 2026</span>
+    <a class="back-to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  Array.prototype.slice.call(document.querySelectorAll('.xm-video-sequence')).forEach(function (seqVideo) {
+    var sources = seqVideo.getAttribute('data-sources').split(',');
+    var seqIndex = 0;
+    var playNext = function () {
+      seqVideo.src = sources[seqIndex];
+      seqIndex = (seqIndex + 1) % sources.length;
+      seqVideo.play().catch(function () {});
+    };
+    seqVideo.addEventListener('ended', playNext);
+    playNext();
+  });
+
+  var scenes = Array.prototype.slice.call(document.querySelectorAll('.xm-scene'));
+  var stageBtns = Array.prototype.slice.call(document.querySelectorAll('.xm-stage-btn'));
+  var dotsWrap = document.getElementById('xm-dots');
+  var prevBtn = document.getElementById('xm-prev');
+  var nextBtn = document.getElementById('xm-next');
+  var current = 0;
+
+  scenes.forEach(function (_, i) {
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', 'Go to stage ' + (i + 1));
+    dotsWrap.appendChild(dot);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.children);
+
+  var TRANSITION_MS = 380;
+  var transitioning = false;
+  var initialized = false;
+
+  function updateChrome() {
+    stageBtns.forEach(function (b, i) { b.classList.toggle('active', i === current); });
+    dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === scenes.length - 1;
+  }
+
+  function show(index) {
+    index = Math.max(0, Math.min(scenes.length - 1, index));
+
+    if (!initialized) {
+      initialized = true;
+      current = index;
+      scenes.forEach(function (s, i) { s.classList.toggle('active', i === current); });
+      updateChrome();
+      return;
+    }
+
+    if (index === current || transitioning) return;
+
+    var direction = index > current ? 'forward' : 'backward';
+    var oldScene = scenes[current];
+    var newScene = scenes[index];
+    transitioning = true;
+
+    newScene.classList.remove('xm-exit-left', 'xm-exit-right', 'xm-enter-left', 'xm-enter-right');
+    newScene.classList.add('active');
+    void newScene.offsetWidth;
+    newScene.classList.add(direction === 'forward' ? 'xm-enter-right' : 'xm-enter-left');
+
+    oldScene.classList.remove('xm-enter-left', 'xm-enter-right');
+    void oldScene.offsetWidth;
+    oldScene.classList.add(direction === 'forward' ? 'xm-exit-left' : 'xm-exit-right');
+
+    current = index;
+    updateChrome();
+    document.querySelector('.xm-scene-wrap').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    setTimeout(function () {
+      oldScene.classList.remove('active', 'xm-exit-left', 'xm-exit-right');
+      newScene.classList.remove('xm-enter-left', 'xm-enter-right');
+      transitioning = false;
+    }, TRANSITION_MS);
+  }
+
+  stageBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { show(i); });
+  });
+  dots.forEach(function (dot, i) {
+    dot.addEventListener('click', function () { show(i); });
+  });
+  prevBtn.addEventListener('click', function () { show(current - 1); });
+  nextBtn.addEventListener('click', function () { show(current + 1); });
+
+  show(0);
+})();
+</script>
+
+</body>
+</html>

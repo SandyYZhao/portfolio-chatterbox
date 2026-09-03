@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session Scope — Sandy Zhao</title>
+<meta name="description" content="Case study: an end-to-end pipeline that turns tutoring session audio into actionable quality insights.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grid-lines" aria-hidden="true"></div>
+
+<div class="page">
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <p class="name"><a href="index.html" style="color:inherit;">Sandy Zhao</a></p>
+
+      <nav class="side-nav" aria-label="Section navigation">
+        <a href="index.html#about"><span class="idx">[01]</span> About</a>
+        <a href="index.html#work" class="active"><span class="idx">[02]</span> Selected Works</a>
+        <a href="index.html#publications"><span class="idx">[03]</span> Publications</a>
+      </nav>
+    </div>
+
+    <div class="sidebar-placeholder" aria-hidden="true"></div>
+
+    <div class="sidebar-brief">
+      <div class="tldr">
+        <p class="micro-label">[TL;DR]</p>
+        <p>An end-to-end pipeline that turns tutoring session audio into actionable quality insights &mdash; automatically:</p>
+        <ol>
+          <li>Identifies tutoring actions from session transcripts using discourse analysis, and</li>
+          <li>Evaluates whether those actions are pedagogically productive or counter-productive based on learning science research.</li>
+        </ol>
+      </div>
+
+      <a class="mini-course-link" href="#">[Onboarding Mini-Course for Session Scope]</a>
+
+      <div class="preview-links">
+        <a href="#" target="_blank" rel="noopener">[LinkedIn]</a>
+        <a href="#" target="_blank" rel="noopener">[Resume]</a>
+        <a href="mailto:sandyzhao.work@gmail.com">[Contact]</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <div class="case-title-block">
+      <p class="case-eyebrow">Learning Product Design | To-B | Learning Data Analysis</p>
+      <h1 class="case-title">Session Scope</h1>
+    </div>
+
+    <div class="case-meta-row">
+      <div class="case-meta-item">
+        <p class="micro-label">[Skills]</p>
+        <p>Technology Research (discourse analysis)</p>
+        <p>Bert-Model Development</p>
+        <p>User Experience Research</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="micro-label">[Project Company]</p>
+        <p>Varsity Tutors</p>
+      </div>
+      <div class="case-meta-item">
+        <p class="micro-label">[Role]</p>
+        <p>Lead Researcher</p>
+      </div>
+    </div>
+
+    <div class="glance">
+      <p class="glance-label">[ Influence of product in a glance ]</p>
+      <div class="scrubber">
+        <span class="scrubber-play" aria-hidden="true"></span>
+        <div class="scrubber-track-wrap">
+          <div class="scrubber-track">
+            <div class="scrubber-fill"></div>
+            <div class="scrubber-thumb"></div>
+          </div>
+          <div class="scrubber-times">
+            <span>00:30:30</span>
+            <span>01:12:23</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-row">
+        <div class="review-card">
+          <div class="review-preview">
+            <img src="assets/session-scope/icon-noPreview.svg" alt="">
+            <p>No preview available</p>
+            <p>Press play to start reviewing</p>
+          </div>
+          <div class="review-notes">
+            <p class="micro-label">Notes</p>
+            <div class="notes-line"></div>
+            <div class="notes-line"></div>
+            <div class="notes-line short"></div>
+            <p class="notes-placeholder">Type your notes here...</p>
+          </div>
+          <div class="card-footer" style="width:100%;">
+            <span>Estimated review time</span>
+            <span class="value">50 mins</span>
+          </div>
+        </div>
+
+        <div class="compliance-card">
+          <div class="compliance-badge">
+            <div class="avatar-face" aria-hidden="true">
+              <span class="part avatar-head"><span class="part-inner"><img src="assets/session-scope/face-head.svg" alt=""></span></span>
+              <span class="part avatar-chin"><img src="assets/session-scope/face-chin.svg" alt=""></span>
+              <span class="part avatar-mouth"><img src="assets/session-scope/face-mouth.svg" alt=""></span>
+              <span class="part avatar-eyes"><span class="part-inner"><img src="assets/session-scope/face-eyes.svg" alt=""></span></span>
+              <span class="part avatar-nose"><span class="part-inner"><img src="assets/session-scope/face-nose.svg" alt=""></span></span>
+              <span class="part avatar-hair"><img src="assets/session-scope/face-hair.svg" alt=""></span>
+              <span class="part avatar-ears"><span class="part-inner"><img src="assets/session-scope/face-ears.svg" alt=""></span></span>
+              <span class="part avatar-glasses"><span class="part-inner"><img src="assets/session-scope/face-glasses.svg" alt=""></span></span>
+            </div>
+            <p>Compliance management</p>
+          </div>
+          <p class="compliance-note">Limited to manual review</p>
+          <div class="card-footer">
+            <span>Audience for the feature</span>
+            <span class="value">Compliance only</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem-row">
+      <div class="problem-text">
+        <p class="micro-label">[The Problem]</p>
+        <p>Varsity Tutors approached us with the problem that although they have rich and dense audio recordings of tutoring sessions conducted on their platform, they are not gathering enough insights from said recordings.</p>
+      </div>
+
+      <div class="data-focus">
+        <div class="data-focus-headers">
+          <p class="current">Current Data Focus</p>
+          <p class="target">Data that truly helps students</p>
+        </div>
+        <div class="data-focus-lists">
+          <ul class="current-list">
+            <li>No show rate</li>
+            <li>Time on task</li>
+            <li>Client Churn Rate</li>
+          </ul>
+          <ul class="target-list">
+            <li>Feedback Delivery</li>
+            <li>Scaffolding Quality</li>
+            <li>Answer Alignment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 1]</p>
+        <p>Since most students are teenagers, our analysis are restricted to text transcript of sessions only, no video recordings available.</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 1 - Transcription]</p>
+        <p>Research open sourced library for audio to text transformation hosted locally, automate transcription of audio to text so further analysis can happen.</p>
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 2]</p>
+        <p>How to summarize and monitor the actions happening in tutoring with only reading the transcribed text of the session?</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 2 - Discourse Analysis]</p>
+        <p>With research, we discovered a labeling technique named &ldquo;Discourse Analysis.&rdquo;</p>
+        <p><strong>Discourse analysis</strong> is a strategy where you take one sentence out of the transcript, then label it with an action that is most fitting for the action happening in that sentence. For example, &ldquo;I don&rsquo;t get this, how did you know what formula to use here&rdquo; is a sentence that you can label &ldquo;QUESTION&rdquo;.</p>
+        <p>With this strategy, we can label all sentences in our transcript with one out of over thirty tags to elicit the action happening in each and every moment of the tutoring session.</p>
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 3]</p>
+        <p>Labeling each and every sentence of a transcript is a lot of work, how do we automize this process?</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 3 - Automation]</p>
+        <p>We trained our own BERT model with System Prompt + Few Shot training to automate our labeling process. To train our own BERT model, we labeled over 12 hours long of transcript to extract enough instances for each and every label.</p>
+        <p>With the help of our BERT model, we gained the automated method to have our transcripts labeled.</p>
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 4]</p>
+        <p>Now know what happened in the sessions, how do we know if they are helpful or not?</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 4 - Evaluation with audience in mind]</p>
+        <p>There are so many measurements of whether a session went right or wrong. To make our insights immediately valuable, we based our evaluation features on existing teams at Varsity Tutors.</p>
+        <p>The first step is to figure out our audiences: who are the users for this product?</p>
+        <p>The next step is to ask each user: what matters the most for you?</p>
+        <p>We developed our specific features trying to answer these questions. Features like Sentiment analysis, Scaffolding and pedagogy quality, Rules violation are included in our final product to address their primary concerns.</p>
+      </div>
+    </div>
+
+    <div class="solution-highlights">
+      <p class="micro-label">[Solution Highlights]</p>
+      <p>This project presents an end-to-end learning engineering pipeline that automatically:</p>
+      <ol>
+        <li>Identifies tutoring actions from session transcripts using discourse analysis, and</li>
+        <li>Evaluates whether those actions are pedagogically productive or counter-productive based on learning science research.</li>
+      </ol>
+      <p>The system bridges educational theory and machine learning to support scalable, evidence-based evaluation of tutoring quality.</p>
+    </div>
+
+    <div class="video-block">
+      <img src="assets/session-scope/video-placeholder.png" alt="Screenshot of the Session Scope sessions dashboard, showing a filterable table of tutoring sessions with risk-area tags.">
+    </div>
+    <div class="video-badge-wrap">
+      <span class="video-badge">[Onboarding Mini-Course for Session Scope]</span>
+    </div>
+
+  </main>
+
+</div>
+
+<footer class="site-footer" id="site-footer">
+  <div class="footer-columns">
+    <div class="footer-brand">
+      <p class="footer-name">Sandy Zhao</p>
+      <p class="footer-tagline">Instructional Design</p>
+      <p class="footer-tagline">Learning Engineering</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <span class="footer-nav-label">[ Navigation ]</span>
+      <a href="index.html#about"><span class="idx">[01]</span> About</a>
+      <a href="index.html#work"><span class="idx">[02]</span> Selected Works</a>
+      <a href="index.html#publications"><span class="idx">[03]</span> Publications</a>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <span class="copyright">&copy; 2026</span>
+    <a class="back-to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top &uarr;</a>
+  </div>
+</footer>
+
+</body>
+</html>
