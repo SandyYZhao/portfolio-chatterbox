@@ -73,62 +73,198 @@
       </div>
     </div>
 
-    <div class="glance">
+    <div class="review-compare">
       <p class="glance-label">[ Influence of product in a glance ]</p>
-      <div class="scrubber">
-        <span class="scrubber-play" aria-hidden="true"></span>
-        <div class="scrubber-track-wrap">
-          <div class="scrubber-track">
-            <div class="scrubber-fill"></div>
-            <div class="scrubber-thumb"></div>
-          </div>
-          <div class="scrubber-times">
-            <span>00:30:30</span>
-            <span>01:12:23</span>
-          </div>
-        </div>
+
+      <div class="review-compare-labels" aria-hidden="true">
+        <span class="review-compare-label is-active" id="rc-label-before">Before</span>
+        <span class="review-compare-label-arrow">&rarr;</span>
+        <span class="review-compare-label" id="rc-label-after">After</span>
+        <span class="review-compare-hint">Move your mouse to compare</span>
       </div>
 
-      <div class="review-row">
-        <div class="review-card">
-          <div class="review-preview">
-            <img src="assets/session-scope/icon-noPreview.svg" alt="">
-            <p>No preview available</p>
-            <p>Press play to start reviewing</p>
+      <div class="review-compare-stage" id="rc-stage">
+        <div class="review-compare-layer">
+          <div class="review-compare-timeline">
+            <svg class="review-compare-play" width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><path d="M0 0L12 7L0 14V0Z" fill="#888888"/></svg>
+            <div class="review-compare-track-wrap">
+              <div class="review-compare-tags"></div>
+              <div class="review-compare-track">
+                <div class="review-compare-track-fill" style="width:45%;">
+                  <span class="review-compare-playhead"></span>
+                </div>
+              </div>
+              <div class="review-compare-times">
+                <span>00:30:30</span>
+                <span>01:12:23</span>
+              </div>
+            </div>
           </div>
-          <div class="review-notes">
-            <p class="micro-label">Notes</p>
-            <div class="notes-line"></div>
-            <div class="notes-line"></div>
-            <div class="notes-line short"></div>
-            <p class="notes-placeholder">Type your notes here...</p>
-          </div>
-          <div class="card-footer" style="width:100%;">
-            <span>Estimated review time</span>
-            <span class="value">50 mins</span>
+
+          <div class="review-compare-panels">
+            <div class="review-compare-panel review-compare-panel--left">
+              <div class="review-compare-panel-inner">
+                <div class="review-compare-panel-inner--split">
+                  <div class="review-compare-preview">
+                    <span class="review-compare-preview-icon" aria-hidden="true">!</span>
+                    <span class="review-compare-preview-text">No preview available</span>
+                    <span class="review-compare-preview-subtext">Press Play to start reviewing</span>
+                  </div>
+                  <div class="review-compare-notes">
+                    <span class="review-compare-notes-label">Notes</span>
+                    <span class="review-compare-notes-line" style="width:63%;"></span>
+                    <span class="review-compare-notes-line" style="width:88%;"></span>
+                    <span class="review-compare-notes-line" style="width:63%;"></span>
+                    <span class="review-compare-notes-placeholder">Type your notes here...</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-compare-stat">
+                <span class="review-compare-stat-label">Estimated review time</span>
+                <span class="review-compare-stat-value" style="color:var(--accent);">50 mins</span>
+              </div>
+            </div>
+
+            <div class="review-compare-panel review-compare-panel--right">
+              <div class="review-compare-panel-inner">
+                <div class="review-compare-limited">
+                  <div class="avatar-face" aria-hidden="true">
+                    <span class="part avatar-head"><span class="part-inner"><img src="assets/session-scope/face-head.svg" alt=""></span></span>
+                    <span class="part avatar-chin"><img src="assets/session-scope/face-chin.svg" alt=""></span>
+                    <span class="part avatar-mouth"><img src="assets/session-scope/face-mouth.svg" alt=""></span>
+                    <span class="part avatar-eyes"><span class="part-inner"><img src="assets/session-scope/face-eyes.svg" alt=""></span></span>
+                    <span class="part avatar-nose"><span class="part-inner"><img src="assets/session-scope/face-nose.svg" alt=""></span></span>
+                    <span class="part avatar-hair"><img src="assets/session-scope/face-hair.svg" alt=""></span>
+                    <span class="part avatar-ears"><span class="part-inner"><img src="assets/session-scope/face-ears.svg" alt=""></span></span>
+                    <span class="part avatar-glasses"><span class="part-inner"><img src="assets/session-scope/face-glasses.svg" alt=""></span></span>
+                  </div>
+                  <div>
+                    <div class="review-compare-limited-title">Compliance management</div>
+                    <div class="review-compare-limited-subtext">Limited to manual review</div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-compare-stat">
+                <span class="review-compare-stat-label">Audience for the feature</span>
+                <span class="review-compare-stat-value" style="color:var(--accent);">Compliance only</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="compliance-card">
-          <div class="compliance-badge">
-            <div class="avatar-face" aria-hidden="true">
-              <span class="part avatar-head"><span class="part-inner"><img src="assets/session-scope/face-head.svg" alt=""></span></span>
-              <span class="part avatar-chin"><img src="assets/session-scope/face-chin.svg" alt=""></span>
-              <span class="part avatar-mouth"><img src="assets/session-scope/face-mouth.svg" alt=""></span>
-              <span class="part avatar-eyes"><span class="part-inner"><img src="assets/session-scope/face-eyes.svg" alt=""></span></span>
-              <span class="part avatar-nose"><span class="part-inner"><img src="assets/session-scope/face-nose.svg" alt=""></span></span>
-              <span class="part avatar-hair"><img src="assets/session-scope/face-hair.svg" alt=""></span>
-              <span class="part avatar-ears"><span class="part-inner"><img src="assets/session-scope/face-ears.svg" alt=""></span></span>
-              <span class="part avatar-glasses"><span class="part-inner"><img src="assets/session-scope/face-glasses.svg" alt=""></span></span>
+        <div class="review-compare-layer review-compare-layer--after" id="rc-after-layer">
+          <div class="review-compare-timeline">
+            <svg class="review-compare-play" width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><path d="M0 0L12 7L0 14V0Z" fill="#888888"/></svg>
+            <div class="review-compare-track-wrap">
+              <div class="review-compare-tags">
+                <div class="review-compare-tag" style="left:3%; color:var(--rc-compliance); background:var(--rc-compliance-bg);">Rule Violation<span class="review-compare-tag-line" style="background:var(--rc-compliance);"></span></div>
+                <div class="review-compare-tag" style="left:17%; color:var(--rc-pedagogy); background:var(--rc-pedagogy-bg);">Frustration Spike<span class="review-compare-tag-line" style="background:var(--rc-pedagogy);"></span></div>
+                <div class="review-compare-tag" style="left:51%; color:var(--rc-wellbeing); background:var(--rc-wellbeing-bg);">Strong Scaffolding<span class="review-compare-tag-line" style="background:var(--rc-wellbeing);"></span></div>
+                <div class="review-compare-tag" style="left:78%; color:var(--rc-wellbeing); background:var(--rc-wellbeing-bg);">Effective praise<span class="review-compare-tag-line" style="background:var(--rc-wellbeing);"></span></div>
+              </div>
+              <div class="review-compare-track">
+                <div class="review-compare-track-fill" style="width:45%;">
+                  <span class="review-compare-playhead"></span>
+                </div>
+              </div>
+              <div class="review-compare-times">
+                <span>00:30:30</span>
+                <span>01:12:23</span>
+              </div>
             </div>
-            <p>Compliance management</p>
           </div>
-          <p class="compliance-note">Limited to manual review</p>
-          <div class="card-footer">
-            <span>Audience for the feature</span>
-            <span class="value">Compliance only</span>
+
+          <div class="review-compare-panels">
+            <div class="review-compare-panel review-compare-panel--left">
+              <div class="review-compare-panel-inner">
+                <div class="review-compare-brief">
+                  <div class="review-compare-brief-header">
+                    <span>+ Session brief</span>
+                    <span class="review-compare-brief-badge">Auto-generated</span>
+                  </div>
+                  <p class="review-compare-brief-meta">Algebra tutoring &middot; Grade 9 &middot; 1h 8m</p>
+                  <p class="review-compare-brief-text">Student struggled with quadratic factoring early in the session; recovered confidently after the example walkthrough at 35:00.</p>
+                  <div class="review-compare-brief-chart" aria-hidden="true">
+                    <svg viewBox="0 0 260 60" width="100%" height="60" preserveAspectRatio="none">
+                      <polyline points="0,40 40,44 80,20 120,32 160,10 200,14 260,26" fill="none" stroke="#4a917f" stroke-width="2"/>
+                    </svg>
+                    <span class="review-compare-brief-peak">peak 35:00</span>
+                  </div>
+                  <div class="review-compare-brief-findings">
+                    <span class="review-compare-brief-findings-label">Key findings</span>
+                    <div class="review-compare-finding">
+                      <span class="review-compare-finding-badge" style="background:var(--rc-compliance-bg); color:var(--rc-compliance);">compliance</span>
+                      <span class="review-compare-finding-label">missed disclosure</span>
+                      <span class="review-compare-finding-time">04:12</span>
+                    </div>
+                    <div class="review-compare-finding">
+                      <span class="review-compare-finding-badge" style="background:var(--rc-wellbeing-bg); color:var(--rc-wellbeing);">wellbeing</span>
+                      <span class="review-compare-finding-label">Strong Scaffolding</span>
+                      <span class="review-compare-finding-time">35:00</span>
+                    </div>
+                    <div class="review-compare-finding">
+                      <span class="review-compare-finding-badge" style="background:var(--rc-pedagogy-bg); color:var(--rc-pedagogy);">pedagogy</span>
+                      <span class="review-compare-finding-label">Frustration Spike</span>
+                      <span class="review-compare-finding-time">14:30</span>
+                    </div>
+                    <div class="review-compare-finding">
+                      <span class="review-compare-finding-badge" style="background:var(--rc-wellbeing-bg); color:var(--rc-wellbeing);">wellbeing</span>
+                      <span class="review-compare-finding-label">Effective Praise</span>
+                      <span class="review-compare-finding-time">65:00</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="review-compare-stat">
+                <span class="review-compare-stat-label">Estimated review time</span>
+                <span class="review-compare-stat-value" style="color:var(--track-fill);">~8 mins</span>
+              </div>
+            </div>
+
+            <div class="review-compare-panel review-compare-panel--right">
+              <div class="review-compare-panel-inner">
+                <div class="review-compare-benefits">
+                  <div class="review-compare-benefit" style="background:var(--rc-compliance-bg); border-color:var(--rc-compliance);">
+                    <div class="review-compare-benefit-header">
+                      <img src="assets/session-scope/review-tool/avatar-compliance.png" alt="" class="review-compare-avatar">
+                      <span style="color:var(--rc-compliance);">Compliance management</span>
+                    </div>
+                    <ul style="color:var(--rc-compliance);">
+                      <li>Generate audit-ready session summaries</li>
+                      <li>Reduce manual review time</li>
+                    </ul>
+                  </div>
+                  <div class="review-compare-benefit" style="background:var(--rc-wellbeing-bg); border-color:var(--rc-wellbeing);">
+                    <div class="review-compare-benefit-header">
+                      <img src="assets/session-scope/review-tool/avatar-wellbeing.png" alt="" class="review-compare-avatar">
+                      <span style="color:var(--rc-wellbeing);">Wellbeing Support</span>
+                    </div>
+                    <ul style="color:var(--rc-wellbeing);">
+                      <li>Detect frustration spikes automatically</li>
+                      <li>Highlight positive interactions</li>
+                    </ul>
+                  </div>
+                  <div class="review-compare-benefit" style="background:var(--rc-pedagogy-bg); border-color:var(--rc-pedagogy);">
+                    <div class="review-compare-benefit-header">
+                      <img src="assets/session-scope/review-tool/avatar-pedagogy.png" alt="" class="review-compare-avatar">
+                      <span style="color:var(--rc-pedagogy);">Pedagogy quality</span>
+                    </div>
+                    <ul style="color:var(--rc-pedagogy);">
+                      <li>Highlight scaffolding and teaching trends</li>
+                      <li>Generate session trends</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="review-compare-stat">
+                <span class="review-compare-stat-label">Audience for the feature</span>
+                <span class="review-compare-stat-value" style="color:var(--track-fill);">Various teams</span>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="review-compare-swipe-line" id="rc-swipe-line"></div>
       </div>
     </div>
 
@@ -230,6 +366,7 @@
 </div>
 
 <footer class="site-footer" id="site-footer">
+  <div class="footer-inner">
   <div class="footer-columns">
     <div class="footer-brand">
       <p class="footer-name">Sandy Zhao</p>
@@ -247,7 +384,137 @@
     <span class="copyright">&copy; 2026</span>
     <a class="back-to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top &uarr;</a>
   </div>
+  </div>
 </footer>
+<script>
+(function () {
+  // Reveal the footer by tracking scroll position directly instead of
+  // relying on position:sticky + a negative margin on its preceding
+  // sibling -- that combination is known to make browsers miscompute the
+  // sticky element's static position (it can render "stuck" from the very
+  // top of the page). A fixed-position footer driven by a plain scroll
+  // listener sidesteps that bug entirely and is fully predictable.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var footer = document.getElementById('site-footer');
+  if (!footer) return;
+
+  var spacer = document.createElement('div');
+  spacer.setAttribute('aria-hidden', 'true');
+  footer.parentNode.insertBefore(spacer, footer);
+  footer.classList.add('js-reveal');
+
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var footerHeight = footer.offsetHeight;
+    spacer.style.height = footerHeight + 'px';
+
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var distanceFromBottom = maxScroll - window.scrollY;
+    var revealProgress = 1 - Math.min(1, Math.max(0, distanceFromBottom / footerHeight));
+    var hiddenPx = (1 - revealProgress) * footerHeight;
+    footer.style.transform = 'translateY(' + hiddenPx + 'px)';
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  update();
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  if (window.ResizeObserver) {
+    // Watch the whole document body too, not just the footer -- async
+    // media (video dimensions resolving after load) can change the
+    // page's total scrollable height without firing a scroll event,
+    // which would otherwise leave the reveal position stale.
+    var ro = new ResizeObserver(requestUpdate);
+    ro.observe(footer);
+    ro.observe(document.body);
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var stage = document.getElementById('rc-stage');
+  var afterLayer = document.getElementById('rc-after-layer');
+  var swipeLine = document.getElementById('rc-swipe-line');
+  var labelBefore = document.getElementById('rc-label-before');
+  var labelAfter = document.getElementById('rc-label-after');
+  if (!stage || !afterLayer || !swipeLine) return;
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  var target = 0;
+  var current = 0;
+  var raf = null;
+
+  function render(v) {
+    afterLayer.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+    swipeLine.style.left = v + '%';
+    var isAfterSide = v >= 50;
+    labelBefore.classList.toggle('is-active', !isAfterSide);
+    labelAfter.classList.toggle('is-active', isAfterSide);
+  }
+
+  // A simple lerp-toward-target loop standing in for framer-motion's
+  // spring -- glides the wipe rather than jumping straight to the
+  // cursor on every mousemove tick.
+  function loop() {
+    current += (target - current) * 0.22;
+    if (Math.abs(target - current) < 0.1) {
+      current = target;
+      render(current);
+      raf = null;
+      return;
+    }
+    render(current);
+    raf = requestAnimationFrame(loop);
+  }
+
+  function setTarget(v) {
+    target = Math.max(0, Math.min(100, v));
+    if (prefersReducedMotion) {
+      current = target;
+      render(current);
+      return;
+    }
+    if (!raf) raf = requestAnimationFrame(loop);
+  }
+
+  if (supportsHover) {
+    // Tracked on window (not just the stage) so drifting off the
+    // component's left/right edge pins the divider there instead of
+    // resetting -- only leaving its vertical band resets to "before".
+    window.addEventListener('mousemove', function (e) {
+      var rect = stage.getBoundingClientRect();
+      var withinVerticalBand = e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if (!withinVerticalBand) {
+        setTarget(0);
+        return;
+      }
+      var pct = ((e.clientX - rect.left) / rect.width) * 100;
+      setTarget(pct);
+    });
+  } else {
+    // No continuous cursor position on touch -- tap toggles between the
+    // two extremes instead.
+    stage.addEventListener('click', function () {
+      setTarget(target >= 50 ? 0 : 100);
+    });
+  }
+
+  render(0);
+})();
+</script>
+
 
 </body>
 </html>

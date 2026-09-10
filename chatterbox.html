@@ -437,6 +437,7 @@
 </div>
 
 <footer class="site-footer" id="site-footer">
+  <div class="footer-inner">
   <div class="footer-columns">
     <div class="footer-brand">
       <p class="footer-name">Sandy Zhao</p>
@@ -454,7 +455,62 @@
     <span class="copyright">&copy; 2026</span>
     <a class="back-to-top" href="#top" onclick="window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});return false;">Back to top &uarr;</a>
   </div>
+  </div>
 </footer>
+
+<script>
+(function () {
+  // Reveal the footer by tracking scroll position directly instead of
+  // relying on position:sticky + a negative margin on its preceding
+  // sibling -- that combination is known to make browsers miscompute the
+  // sticky element's static position (it can render "stuck" from the very
+  // top of the page). A fixed-position footer driven by a plain scroll
+  // listener sidesteps that bug entirely and is fully predictable.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var footer = document.getElementById('site-footer');
+  if (!footer) return;
+
+  var spacer = document.createElement('div');
+  spacer.setAttribute('aria-hidden', 'true');
+  footer.parentNode.insertBefore(spacer, footer);
+  footer.classList.add('js-reveal');
+
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var footerHeight = footer.offsetHeight;
+    spacer.style.height = footerHeight + 'px';
+
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var distanceFromBottom = maxScroll - window.scrollY;
+    var revealProgress = 1 - Math.min(1, Math.max(0, distanceFromBottom / footerHeight));
+    var hiddenPx = (1 - revealProgress) * footerHeight;
+    footer.style.transform = 'translateY(' + hiddenPx + 'px)';
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  update();
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  if (window.ResizeObserver) {
+    // Watch the whole document body too, not just the footer -- async
+    // media (video dimensions resolving after load) can change the
+    // page's total scrollable height without firing a scroll event,
+    // which would otherwise leave the reveal position stale.
+    var ro = new ResizeObserver(requestUpdate);
+    ro.observe(footer);
+    ro.observe(document.body);
+  }
+})();
+</script>
 
 <script>
 (function () {

@@ -140,11 +140,71 @@
       </div>
     </div>
 
+    <div class="lbd-section">
+      <p class="micro-label">[Learn By Doing]</p>
+      <div class="lbd-card" data-correct-feedback="Correct! Assessments are tests for students&rsquo; understanding, common ones includes quizzes, midterm and final exams. Evaluations, on the other hand, are examining how effective the course is. Common methods includes feedback from the students, xAPI data analytics." data-incorrect-feedback="Not quite. Try to re-read Step 3 and Step 5 and come back to this question!">
+        <p class="lbd-question">What is the difference between Assessment and Evaluation?</p>
+        <div class="lbd-options">
+          <button type="button" class="lbd-option" data-correct="false">There is no difference between the two, they can be used interchangeably<span class="lbd-option-mark" aria-hidden="true"></span></button>
+          <button type="button" class="lbd-option" data-correct="true">Assessment are designed for students, while evaluations are designed for the course<span class="lbd-option-mark" aria-hidden="true"></span></button>
+          <button type="button" class="lbd-option" data-correct="false">Assessments examines how the course does, while evaluations evaluates how students are learning.<span class="lbd-option-mark" aria-hidden="true"></span></button>
+        </div>
+        <div class="lbd-answer-box lbd-feedback" aria-live="polite">Select an answer to see feedback.</div>
+      </div>
+    </div>
+
+    <div class="lbd-section">
+      <p class="micro-label">[Learn By Doing]</p>
+      <div class="lbd-card" data-correct-feedback="Correct! To gauge students&rsquo; understanding I often look for evidences from their performance on assessments. I first construct the major questions, then supply them with the information needed to answer it." data-incorrect-feedback="Not quite. Try revisiting Step 3 and 4 and come back to this question!">
+        <p class="lbd-question">In my process, why do I plan the Assessments (Step 3) before Scripting the Instruction (Step 4)?</p>
+        <div class="lbd-options">
+          <button type="button" class="lbd-option" data-correct="true">So I know exactly what students need to demonstrate before I decide what to teach them<span class="lbd-option-mark" aria-hidden="true"></span></button>
+          <button type="button" class="lbd-option" data-correct="false">Assessments are quicker to write, so I get them out of the way early<span class="lbd-option-mark" aria-hidden="true"></span></button>
+          <button type="button" class="lbd-option" data-correct="false">The order doesn&rsquo;t really matter, I just personally prefer writing quizzes first<span class="lbd-option-mark" aria-hidden="true"></span></button>
+        </div>
+        <div class="lbd-answer-box lbd-feedback" aria-live="polite">Select an answer to see feedback.</div>
+      </div>
+    </div>
+
+    <div class="lbd-section">
+      <p class="micro-label">[Learn By Doing]</p>
+      <div class="lbd-card" data-cert-optional="true">
+        <p class="lbd-question">Is Sandy a good fit for your team?</p>
+        <div class="lbd-options">
+          <button type="button" class="lbd-option" data-correct="true" data-feedback="Woohoo! Let&rsquo;s get in touch!">Yes!<span class="lbd-option-mark" aria-hidden="true"></span></button>
+          <button type="button" class="lbd-option" data-correct="false" data-feedback="Oops! I&rsquo;m sorry it didn&rsquo;t work out, maybe visiting my other projects will change your mind?">No&hellip;<span class="lbd-option-mark" aria-hidden="true"></span></button>
+        </div>
+        <div class="lbd-answer-box lbd-feedback" aria-live="polite">Select an answer to see feedback.</div>
+      </div>
+    </div>
+
+    <div class="lbd-section">
+      <p class="micro-label">[Reflection time]</p>
+      <div class="lbd-card">
+        <p class="lbd-question">Reflect on your previous choice and explain your thought process</p>
+        <textarea class="lbd-reflection-input" id="lbd-reflection-input" placeholder="Type your answer here..." rows="3"></textarea>
+        <button type="button" class="lbd-submit-btn" id="lbd-reflection-submit">Submit</button>
+        <p class="lbd-note" id="lbd-reflection-note" aria-live="polite" data-default-note="Seriously, explaining your answer is an research proved way of reinforcing your understanding. Plus, it help Sandy too!" data-thanks-note="Thanks for the feedback! I really appreciate it.">Seriously, explaining your answer is an research proved way of reinforcing your understanding. Plus, it help Sandy too!</p>
+
+        <div class="cert-inline" id="cert-inline" hidden>
+          <canvas class="cert-confetti" id="cert-confetti" aria-hidden="true"></canvas>
+          <p class="micro-label">[Certificate of Completion]</p>
+          <h3 class="cert-title" id="cert-title">Congratulations on passing the quiz!</h3>
+          <p class="cert-body">Let&rsquo;s get a conversation started.</p>
+          <div class="cert-actions">
+            <a class="lbd-submit-btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="lbd-submit-btn" href="mailto:sandyzhao.work@gmail.com">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
 </div>
 
 <footer class="site-footer" id="site-footer">
+  <div class="footer-inner">
   <div class="footer-columns">
     <div class="footer-brand">
       <p class="footer-name">Sandy Zhao</p>
@@ -162,7 +222,271 @@
     <span class="copyright">&copy; 2026</span>
     <a class="back-to-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Back to top &uarr;</a>
   </div>
+  </div>
 </footer>
+<script>
+(function () {
+  // Reveal the footer by tracking scroll position directly instead of
+  // relying on position:sticky + a negative margin on its preceding
+  // sibling -- that combination is known to make browsers miscompute the
+  // sticky element's static position (it can render "stuck" from the very
+  // top of the page). A fixed-position footer driven by a plain scroll
+  // listener sidesteps that bug entirely and is fully predictable.
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var footer = document.getElementById('site-footer');
+  if (!footer) return;
+
+  var spacer = document.createElement('div');
+  spacer.setAttribute('aria-hidden', 'true');
+  footer.parentNode.insertBefore(spacer, footer);
+  footer.classList.add('js-reveal');
+
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var footerHeight = footer.offsetHeight;
+    spacer.style.height = footerHeight + 'px';
+
+    var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    var distanceFromBottom = maxScroll - window.scrollY;
+    var revealProgress = 1 - Math.min(1, Math.max(0, distanceFromBottom / footerHeight));
+    var hiddenPx = (1 - revealProgress) * footerHeight;
+    footer.style.transform = 'translateY(' + hiddenPx + 'px)';
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  }
+
+  update();
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+  if (window.ResizeObserver) {
+    // Watch the whole document body too, not just the footer -- async
+    // media (video dimensions resolving after load) can change the
+    // page's total scrollable height without firing a scroll event,
+    // which would otherwise leave the reveal position stale.
+    var ro = new ResizeObserver(requestUpdate);
+    ro.observe(footer);
+    ro.observe(document.body);
+  }
+})();
+</script>
+
+<script>
+(function () {
+  // Paste the Google Apps Script Web App URL here to start logging responses to a Sheet.
+  var LBD_LOG_ENDPOINT = 'https://script.google.com/macros/s/AKfycbw2Rk9K8J6savOZ7WK4bGKB0ApNSoZ_zsBR-bxuCevYWlD__SIh0oEu470Uu7EvJUth/exec';
+
+  var tryCounts = {};
+  function getTryNumber(questionKey) {
+    var storageKey = 'lbd-tries:' + questionKey;
+    var n;
+    try {
+      n = (parseInt(localStorage.getItem(storageKey), 10) || 0) + 1;
+      localStorage.setItem(storageKey, n);
+    } catch (e) {
+      n = (tryCounts[storageKey] || 0) + 1;
+    }
+    tryCounts[storageKey] = n;
+    return n;
+  }
+
+  function logResponse(payload) {
+    if (!LBD_LOG_ENDPOINT) return;
+    payload.page = window.location.pathname;
+    fetch(LBD_LOG_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    }).catch(function () {});
+  }
+
+  var cards = document.querySelectorAll('.lbd-card');
+  cards.forEach(function (card) {
+    var options = card.querySelectorAll('.lbd-option');
+    var feedbackEl = card.querySelector('.lbd-feedback');
+    if (!options.length || !feedbackEl) return;
+
+    var correctFeedback = card.getAttribute('data-correct-feedback');
+    var incorrectFeedback = card.getAttribute('data-incorrect-feedback');
+
+    options.forEach(function (opt) {
+      opt.addEventListener('click', function () {
+        // Only the clicked option is marked -- getting it wrong doesn't
+        // reveal which one was correct, so re-reading the material (or
+        // trying again) is still the way to find out.
+        Array.prototype.forEach.call(options, function (o) {
+          o.classList.remove('is-selected', 'is-correct', 'is-incorrect');
+          var otherMark = o.querySelector('.lbd-option-mark');
+          if (otherMark) otherMark.textContent = '';
+        });
+
+        var feedbackText;
+        if (opt.hasAttribute('data-correct')) {
+          var isCorrect = opt.getAttribute('data-correct') === 'true';
+          opt.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+          var mark = opt.querySelector('.lbd-option-mark');
+          if (mark) mark.textContent = isCorrect ? '✓' : '✗';
+          feedbackText = opt.hasAttribute('data-feedback')
+            ? opt.getAttribute('data-feedback')
+            : (isCorrect ? correctFeedback : incorrectFeedback);
+        } else {
+          opt.classList.add('is-selected');
+          if (opt.hasAttribute('data-feedback')) {
+            feedbackText = opt.getAttribute('data-feedback');
+          }
+        }
+
+        if (feedbackText) {
+          feedbackEl.textContent = feedbackText;
+          feedbackEl.classList.add('is-filled');
+        }
+
+        var questionText = card.querySelector('.lbd-question').textContent.trim();
+        logResponse({
+          type: 'quiz',
+          question: questionText,
+          answer: opt.textContent.replace(/[✓✗]/g, '').trim(),
+          correct: opt.hasAttribute('data-correct') ? opt.getAttribute('data-correct') === 'true' : null,
+          tryNumber: getTryNumber(questionText)
+        });
+      });
+    });
+  });
+
+  var reflectionInput = document.getElementById('lbd-reflection-input');
+  var reflectionNote = document.getElementById('lbd-reflection-note');
+  var reflectionSubmit = document.getElementById('lbd-reflection-submit');
+  var reflectionSubmitted = false;
+
+  if (reflectionInput && reflectionNote && reflectionSubmit) {
+    reflectionSubmit.addEventListener('click', function () {
+      var hasText = reflectionInput.value.trim().length > 0;
+      reflectionNote.textContent = hasText
+        ? reflectionNote.getAttribute('data-thanks-note')
+        : reflectionNote.getAttribute('data-default-note');
+
+      if (hasText) {
+        var reflectionQuestion = document.querySelector('.lbd-section:last-of-type .lbd-question').textContent.trim();
+        logResponse({
+          type: 'reflection',
+          question: reflectionQuestion,
+          answer: reflectionInput.value.trim(),
+          correct: null,
+          tryNumber: getTryNumber(reflectionQuestion)
+        });
+        reflectionSubmitted = true;
+        checkCertificateEligibility();
+      }
+    });
+  }
+
+  var quizCards = Array.prototype.filter.call(cards, function (card) {
+    return card.querySelector('.lbd-option[data-correct]') && card.getAttribute('data-cert-optional') !== 'true';
+  });
+  var certShown = false;
+
+  function checkCertificateEligibility() {
+    if (certShown) return;
+    var allCorrect = quizCards.length > 0 && quizCards.every(function (card) {
+      return card.querySelector('.lbd-option.is-correct');
+    });
+    if (allCorrect && reflectionSubmitted) {
+      certShown = true;
+      showCertificate();
+    }
+  }
+
+  cards.forEach(function (card) {
+    card.querySelectorAll('.lbd-option').forEach(function (opt) {
+      opt.addEventListener('click', checkCertificateEligibility);
+    });
+  });
+
+  var certInline = document.getElementById('cert-inline');
+  var certCanvas = document.getElementById('cert-confetti');
+
+  function showCertificate() {
+    if (!certInline) return;
+    certInline.hidden = false;
+    launchConfetti();
+  }
+
+  function launchConfetti() {
+    if (!certCanvas || !certInline || !window.requestAnimationFrame) return;
+    var overflow = 120;
+    var width = certInline.clientWidth;
+    var height = certInline.clientHeight + overflow * 2;
+    var dpr = window.devicePixelRatio || 1;
+
+    certCanvas.style.top = (-overflow) + 'px';
+    certCanvas.style.width = width + 'px';
+    certCanvas.style.height = height + 'px';
+    certCanvas.width = width * dpr;
+    certCanvas.height = height * dpr;
+
+    var ctx = certCanvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    var colors = ['#b05c38', '#7a3e25', '#d9a441', '#2e6b6b', '#111111'];
+    var particles = [];
+    var count = 90;
+    var originX = width / 2;
+    var originY = overflow + certInline.clientHeight / 2;
+
+    for (var i = 0; i < count; i++) {
+      particles.push({
+        x: originX,
+        y: originY,
+        vx: (Math.random() - 0.5) * 9,
+        vy: Math.random() * -8 - 3,
+        size: Math.random() * 5 + 3,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        rotation: Math.random() * Math.PI * 2,
+        rotationSpeed: (Math.random() - 0.5) * 0.3
+      });
+    }
+
+    var startTime = null;
+    var duration = 2600;
+
+    function frame(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var elapsed = timestamp - startTime;
+      ctx.clearRect(0, 0, width, height);
+
+      particles.forEach(function (p) {
+        p.vy += 0.3;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rotation += p.rotationSpeed;
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rotation);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.size / 2, -p.size / 4, p.size, p.size / 2);
+        ctx.restore();
+      });
+
+      if (elapsed < duration) {
+        window.requestAnimationFrame(frame);
+      } else {
+        ctx.clearRect(0, 0, width, height);
+      }
+    }
+
+    window.requestAnimationFrame(frame);
+  }
+})();
+</script>
+
 
 </body>
 </html>
