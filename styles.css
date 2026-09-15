@@ -134,48 +134,95 @@ button:focus-visible {
   gap: 10px;
 }
 
-.photo-frame {
-  flex: none;
+.log-entrance {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
   width: 320px;
   max-width: 320px;
   margin-right: -18px;
-  aspect-ratio: 1 / 1;
-  border-radius: 4px;
-  overflow: hidden;
-  background: #e2e0dc;
+  padding: 14px;
   border: 1px solid var(--border);
+  border-radius: 4px;
 }
 
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.entrance-label {
   display: block;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--text-primary);
 }
 
-.photo-frame.empty {
-  background-image: repeating-linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.04) 0,
-    rgba(0, 0, 0, 0.04) 1px,
-    transparent 1px,
-    transparent 10px
-  );
-}
-
-.browser-chrome {
-  height: 32px;
+.entrance-entries {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 10px;
+  flex-direction: column;
+  gap: 26px;
 }
 
-.browser-chrome .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--border);
+.entrance-entry {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  padding-left: 8px;
+  border-left: 2px solid var(--border);
+}
+
+.entrance-entry::after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  bottom: 100%;
+  margin-bottom: 4px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text-primary);
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.entrance-entry[data-kind="build"]::after {
+  content: "Check out what she built";
+}
+
+.entrance-entry[data-kind="note"]::after {
+  content: "Check out what she learned";
+}
+
+.entrance-entry:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .entrance-entry::after {
+    transition: none;
+  }
+}
+
+.entrance-date {
+  flex: none;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-meta);
+  white-space: nowrap;
+}
+
+.entrance-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.entrance-empty {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
 .preview-links {
@@ -2001,6 +2048,7 @@ button:focus-visible {
 .cb-mini-course {
   display: flex;
   justify-content: center;
+  gap: 12px;
   width: 100%;
 }
 
@@ -2727,6 +2775,22 @@ button:focus-visible {
   inset: 0;
   width: calc(178px * var(--pf-scale));
   height: calc(250px * var(--pf-scale));
+  cursor: default;
+  transform-origin: 50% 100%;
+  /* Only the resting fan position lives on this element -- it never moves
+     on hover/focus, so its hit-test area stays anchored right where the
+     card sits. The lift transform below moves just the visual face; if it
+     moved this box instead, the box would vacate its resting spot the
+     instant it lifted, and a cursor that hadn't moved would "fall through"
+     onto whichever card is stacked behind, which would then lift in turn --
+     a flicker loop between neighboring cards. */
+  transform: translate(calc(var(--i) * var(--step-x) * -1), calc(var(--i) * var(--step-y) * -1));
+  outline: none;
+}
+
+.pf-card-face {
+  position: absolute;
+  inset: 0;
   background: #f2d9ae;
   border: 1px solid #1c1710;
   border-radius: calc(14px * var(--pf-scale));
@@ -2734,28 +2798,25 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: default;
   transform-origin: 50% 100%;
-  transform: translate(calc(var(--i) * var(--step-x) * -1), calc(var(--i) * var(--step-y) * -1));
   box-shadow: 0 3px 8px rgba(30, 26, 20, 0.3);
   transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease;
-  outline: none;
 }
 
-.pf-card:focus {
-  transform: translate(calc(var(--i) * var(--step-x) * -1), calc(var(--i) * var(--step-y) * -1 - var(--hover-lift))) scale(1.03);
+.pf-card:focus .pf-card-face {
+  transform: translateY(calc(var(--hover-lift) * -1)) scale(1.03);
   box-shadow: 0 22px 34px -12px rgba(30, 26, 20, 0.45);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .pf-card:hover {
-    transform: translate(calc(var(--i) * var(--step-x) * -1), calc(var(--i) * var(--step-y) * -1 - var(--hover-lift))) scale(1.03);
+  .pf-card:hover .pf-card-face {
+    transform: translateY(calc(var(--hover-lift) * -1)) scale(1.03);
     box-shadow: 0 22px 34px -12px rgba(30, 26, 20, 0.45);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pf-card {
+  .pf-card-face {
     transition-duration: 0.01ms !important;
   }
 }

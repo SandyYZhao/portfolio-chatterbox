@@ -723,9 +723,11 @@
       card.style.setProperty('--i', i);
       card.style.zIndex = CARDS_PER_COLUMN - i;
       card.innerHTML =
+        '<div class="pf-card-face">' +
         '<div class="pf-card-top"><span class="pf-card-plus">+1</span>' +
         '<span class="pf-card-title">Prompt<br>Card</span></div>' +
-        '<p class="pf-card-question"></p>';
+        '<p class="pf-card-question"></p>' +
+        '</div>';
       card.querySelector('.pf-card-question').textContent = item.q;
       card.addEventListener('mouseenter', function () { showDetail(item); });
       card.addEventListener('focus', function () { showDetail(item); });

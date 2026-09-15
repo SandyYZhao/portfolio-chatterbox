@@ -1,0 +1,22 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-2026",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "python3 -m http.server \"$PORT\""],
+      "port": 4173,
+      "autoPort": true
+    },
+    {
+      "name": "portfolio-2026-view",
+      "url": "http://localhost:4173"
+    },
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd 'ChatterBox Video for Portfolio/chatterbox-video' && npm run dev"],
+      "port": 3000
+    }
+  ]
+}
