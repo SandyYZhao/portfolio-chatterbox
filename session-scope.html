@@ -39,7 +39,7 @@
         </ol>
       </div>
 
-      <a class="mini-course-link" href="#">[Onboarding Mini-Course for Session Scope]</a>
+      <a class="mini-course-link" href="courses/getting-to-know-session-scope/index.html" target="_blank" rel="noopener">[Onboarding Mini-Course for Session Scope]</a>
 
       <div class="preview-links">
         <a href="#" target="_blank" rel="noopener">[LinkedIn]</a>
@@ -52,29 +52,129 @@
   <main class="content">
 
     <div class="case-title-block">
-      <p class="case-eyebrow">Learning Product Design | To-B | Learning Data Analysis</p>
+      <p class="case-eyebrow">Learning Product Design | B2B | Learning Data Analysis</p>
       <h1 class="case-title">Session Scope</h1>
     </div>
 
-    <div class="case-meta-row">
+    <p class="case-summary">Session Scope turns recordings of online tutoring sessions into a transcript, labels the action in every sentence, and judges whether those actions help students learn. I was the researcher on the team at Varsity Tutors, where it stayed a prototype.</p>
+
+    <div class="case-meta-row case-meta-row--aligned">
       <div class="case-meta-item">
         <p class="micro-label">[Skills]</p>
         <p>Technology Research (discourse analysis)</p>
         <p>Bert-Model Development</p>
         <p>User Experience Research</p>
       </div>
-      <div class="case-meta-item">
-        <p class="micro-label">[Project Company]</p>
-        <p>Varsity Tutors</p>
+      <div class="case-meta-pair">
+        <div class="case-meta-item">
+          <p class="micro-label">[Project Company]</p>
+          <p>Varsity Tutors</p>
+        </div>
+        <div class="case-meta-item">
+          <p class="micro-label">[Role]</p>
+          <p>Lead Researcher</p>
+        </div>
       </div>
-      <div class="case-meta-item">
-        <p class="micro-label">[Role]</p>
-        <p>Lead Researcher</p>
+    </div>
+
+    <div class="problem-row">
+      <div class="problem-text">
+        <p class="micro-label">[The Problem]</p>
+        <p>Varsity Tutors approached us with the problem that although they have rich and dense audio recordings of tutoring sessions conducted on their platform, they are not gathering enough insights from said recordings.</p>
+      </div>
+
+      <div class="data-focus">
+        <div class="data-focus-headers">
+          <p class="current">Current Data Focus</p>
+          <p class="target">Data that truly helps students</p>
+        </div>
+        <div class="data-focus-lists">
+          <ul class="current-list">
+            <li>No show rate</li>
+            <li>Time on task</li>
+            <li>Client Churn Rate</li>
+          </ul>
+          <ul class="target-list">
+            <li>Feedback Delivery</li>
+            <li>Scaffolding Quality</li>
+            <li>Answer Alignment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pipeline-block">
+      <p class="micro-label">[How it works]</p>
+      <ol class="pipeline">
+        <li><span class="pipeline-step">Audio</span><span class="pipeline-note">Tutoring session recording</span></li>
+        <li><span class="pipeline-step">Transcript</span><span class="pipeline-note">Open-source transcription, hosted locally</span></li>
+        <li><span class="pipeline-step">Labeled sentences</span><span class="pipeline-note">One of 30+ action tags per sentence</span></li>
+        <li><span class="pipeline-step">Evaluation</span><span class="pipeline-note">Productive or counter-productive, per learning science</span></li>
+        <li><span class="pipeline-step">Dashboard</span><span class="pipeline-note">Findings sorted by the team that needs them</span></li>
+      </ol>
+    </div>
+
+    <div class="video-figure">
+      <p class="micro-label">[The dashboard]</p>
+      <div class="video-block">
+        <img src="assets/session-scope/sessions-dashboard.png" alt="Screenshot of the Session Scope sessions dashboard, showing a filterable table of tutoring sessions with risk-area tags.">
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 1]</p>
+        <p>Since most students are teenagers, our analysis are restricted to text transcript of sessions only, no video recordings available.</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 1 - Transcription]</p>
+        <p>Research open sourced library for audio to text transformation hosted locally, automate transcription of audio to text so further analysis can happen.</p>
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 2]</p>
+        <p>How to summarize and monitor the actions happening in tutoring with only reading the transcribed text of the session?</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 2 - Discourse Analysis]</p>
+        <p>With research, we discovered a labeling technique named &ldquo;Discourse Analysis.&rdquo;</p>
+        <p><strong>Discourse analysis</strong> is a strategy where you take one sentence out of the transcript, then label it with an action that is most fitting for the action happening in that sentence. For example, &ldquo;I don&rsquo;t get this, how did you know what formula to use here&rdquo; is a sentence that you can label &ldquo;QUESTION&rdquo;.</p>
+        <p>With this strategy, we can label all sentences in our transcript with one out of over thirty tags to elicit the action happening in each and every moment of the tutoring session.</p>
+        <p class="labeled-example"><span class="labeled-example-text">&ldquo;I don&rsquo;t get this, how did you know what formula to use here&rdquo;</span><span class="labeled-example-tag">QUESTION</span></p>
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 3]</p>
+        <p>Labeling each and every sentence of a transcript is a lot of work, how do we automize this process?</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 3 - Automation]</p>
+        <p>We trained our own BERT model to do the labeling. We hand-labeled over 12 hours of transcript so that every tag had enough example sentences, then fed those sentences and their discourse analysis tags into the model.</p>
+        <p>The model learned to choose the appropriate tag for each sentence, so new transcripts get labeled automatically instead of by hand.</p>
+      </div>
+    </div>
+
+    <div class="challenge-row">
+      <div class="challenge-col">
+        <p class="micro-label">[Challenge 4]</p>
+        <p>Now know what happened in the sessions, how do we know if they are helpful or not?</p>
+      </div>
+      <div class="strategy-col">
+        <p class="micro-label">[Strategy 4 - Evaluation with audience in mind]</p>
+        <p>There are so many measurements of whether a session went right or wrong. To make our insights immediately valuable, we based our evaluation features on existing teams at Varsity Tutors.</p>
+        <p>The first step is to figure out our audiences: who are the users for this product?</p>
+        <p>The next step is to ask each user: what matters the most for you?</p>
+        <p>We developed our specific features trying to answer these questions. Features like Sentiment analysis, Scaffolding and pedagogy quality, Rules violation are included in our final product to address their primary concerns.</p>
       </div>
     </div>
 
     <div class="review-compare">
-      <p class="glance-label">[ Influence of product in a glance ]</p>
+      <p class="micro-label">[Before and after Session Scope]</p>
+      <p class="section-lede">Before, reviewing a session meant scrubbing through the audio and typing notes by hand. After, each team sees the findings it cares about. The screens below are a recreation of the review tool, not a capture of the live product.</p>
 
       <div class="review-compare-labels" aria-hidden="true">
         <span class="review-compare-label is-active" id="rc-label-before">Before</span>
@@ -268,97 +368,12 @@
       </div>
     </div>
 
-    <div class="problem-row">
-      <div class="problem-text">
-        <p class="micro-label">[The Problem]</p>
-        <p>Varsity Tutors approached us with the problem that although they have rich and dense audio recordings of tutoring sessions conducted on their platform, they are not gathering enough insights from said recordings.</p>
-      </div>
-
-      <div class="data-focus">
-        <div class="data-focus-headers">
-          <p class="current">Current Data Focus</p>
-          <p class="target">Data that truly helps students</p>
-        </div>
-        <div class="data-focus-lists">
-          <ul class="current-list">
-            <li>No show rate</li>
-            <li>Time on task</li>
-            <li>Client Churn Rate</li>
-          </ul>
-          <ul class="target-list">
-            <li>Feedback Delivery</li>
-            <li>Scaffolding Quality</li>
-            <li>Answer Alignment</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="challenge-row">
-      <div class="challenge-col">
-        <p class="micro-label">[Challenge 1]</p>
-        <p>Since most students are teenagers, our analysis are restricted to text transcript of sessions only, no video recordings available.</p>
-      </div>
-      <div class="strategy-col">
-        <p class="micro-label">[Strategy 1 - Transcription]</p>
-        <p>Research open sourced library for audio to text transformation hosted locally, automate transcription of audio to text so further analysis can happen.</p>
-      </div>
-    </div>
-
-    <div class="challenge-row">
-      <div class="challenge-col">
-        <p class="micro-label">[Challenge 2]</p>
-        <p>How to summarize and monitor the actions happening in tutoring with only reading the transcribed text of the session?</p>
-      </div>
-      <div class="strategy-col">
-        <p class="micro-label">[Strategy 2 - Discourse Analysis]</p>
-        <p>With research, we discovered a labeling technique named &ldquo;Discourse Analysis.&rdquo;</p>
-        <p><strong>Discourse analysis</strong> is a strategy where you take one sentence out of the transcript, then label it with an action that is most fitting for the action happening in that sentence. For example, &ldquo;I don&rsquo;t get this, how did you know what formula to use here&rdquo; is a sentence that you can label &ldquo;QUESTION&rdquo;.</p>
-        <p>With this strategy, we can label all sentences in our transcript with one out of over thirty tags to elicit the action happening in each and every moment of the tutoring session.</p>
-      </div>
-    </div>
-
-    <div class="challenge-row">
-      <div class="challenge-col">
-        <p class="micro-label">[Challenge 3]</p>
-        <p>Labeling each and every sentence of a transcript is a lot of work, how do we automize this process?</p>
-      </div>
-      <div class="strategy-col">
-        <p class="micro-label">[Strategy 3 - Automation]</p>
-        <p>We trained our own BERT model with System Prompt + Few Shot training to automate our labeling process. To train our own BERT model, we labeled over 12 hours long of transcript to extract enough instances for each and every label.</p>
-        <p>With the help of our BERT model, we gained the automated method to have our transcripts labeled.</p>
-      </div>
-    </div>
-
-    <div class="challenge-row">
-      <div class="challenge-col">
-        <p class="micro-label">[Challenge 4]</p>
-        <p>Now know what happened in the sessions, how do we know if they are helpful or not?</p>
-      </div>
-      <div class="strategy-col">
-        <p class="micro-label">[Strategy 4 - Evaluation with audience in mind]</p>
-        <p>There are so many measurements of whether a session went right or wrong. To make our insights immediately valuable, we based our evaluation features on existing teams at Varsity Tutors.</p>
-        <p>The first step is to figure out our audiences: who are the users for this product?</p>
-        <p>The next step is to ask each user: what matters the most for you?</p>
-        <p>We developed our specific features trying to answer these questions. Features like Sentiment analysis, Scaffolding and pedagogy quality, Rules violation are included in our final product to address their primary concerns.</p>
-      </div>
-    </div>
-
-    <div class="solution-highlights">
-      <p class="micro-label">[Solution Highlights]</p>
-      <p>This project presents an end-to-end learning engineering pipeline that automatically:</p>
-      <ol>
-        <li>Identifies tutoring actions from session transcripts using discourse analysis, and</li>
-        <li>Evaluates whether those actions are pedagogically productive or counter-productive based on learning science research.</li>
-      </ol>
-      <p>The system bridges educational theory and machine learning to support scalable, evidence-based evaluation of tutoring quality.</p>
-    </div>
-
-    <div class="video-block">
-      <img src="assets/session-scope/video-placeholder.png" alt="Screenshot of the Session Scope sessions dashboard, showing a filterable table of tutoring sessions with risk-area tags.">
-    </div>
-    <div class="video-badge-wrap">
-      <span class="video-badge">[Onboarding Mini-Course for Session Scope]</span>
+    <div class="about-block">
+      <p class="micro-label">[My role]</p>
+      <p>I was the researcher on the team, and the work had two sides.</p>
+      <p><strong>Product research.</strong> I talked to the teams at Varsity Tutors to find out what each of them needed from the dashboard, and those conversations decided which features we built.</p>
+      <p><strong>Technology research.</strong> I learned about discourse analysis and applied it to our product.</p>
+      <p>Session Scope stayed at the prototype stage, so there are no production results to report.</p>
     </div>
 
   </main>
