@@ -39,7 +39,7 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--text-primary);
   outline-offset: 2px;
 }
 
@@ -193,6 +193,17 @@ button:focus-visible {
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--text-muted);
+}
+
+.preview-links a {
+  position: relative;
+  transition: color 150ms ease-out;
+}
+
+.preview-links a::before {
+  content: "";
+  position: absolute;
+  inset: -10px -8px;
 }
 
 .preview-links a:hover {
@@ -399,7 +410,12 @@ button:focus-visible {
   gap: 16px;
   flex: 1;
   min-height: 0;
-  justify-content: flex-end;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.sidebar-brief > :first-child {
+  margin-top: auto;
 }
 
 .micro-label {
@@ -431,18 +447,6 @@ button:focus-visible {
   margin-left: 21px;
 }
 
-.mini-course-link {
-  font-weight: 500;
-  font-size: 10px;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.mini-course-link:hover {
-  color: var(--accent-dark);
-}
-
 /* case hero meta row */
 
 .case-title-block {
@@ -463,6 +467,7 @@ button:focus-visible {
 
 .case-title {
   margin: 0;
+  text-wrap: balance;
   font-family: "Fraunces", Georgia, serif;
   font-optical-sizing: auto;
   font-weight: 500;
@@ -470,14 +475,6 @@ button:focus-visible {
   line-height: 1.25;
   letter-spacing: -2px;
   color: var(--text-primary);
-}
-
-.case-meta-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 32px 48px;
-  width: 100%;
-  flex-wrap: wrap;
 }
 
 .case-meta-item {
@@ -1275,14 +1272,14 @@ button:focus-visible {
   flex: 1 1 380px;
   max-width: 480px;
   background: var(--bg);
-  padding: 5px 0 16px;
+  padding: 5px 0 0;
 }
 
 .data-focus-headers {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -1306,7 +1303,7 @@ button:focus-visible {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
-  padding-top: 12px;
+  padding-top: 8px;
 }
 
 .data-focus-lists .current-list {
@@ -1388,20 +1385,58 @@ button:focus-visible {
   border-radius: 4px;
 }
 
-.video-badge {
+.btn {
   display: inline-flex;
-  align-self: center;
-  margin: -20px auto 0;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  padding: 8px;
   background: var(--text-secondary);
   color: var(--bg);
+  font-family: inherit;
   font-weight: 500;
   font-size: 10px;
+  line-height: inherit;
   letter-spacing: 0.3px;
+  text-align: center;
+  text-decoration: none;
   text-transform: uppercase;
-  padding: 8px;
+  cursor: pointer;
+}
+
+.btn {
+  position: relative;
+  transition-property: background-color, transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+}
+
+.btn:hover {
+  background: var(--text-primary);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn--center {
+  align-self: center;
+}
+
+.btn--overlap {
+  align-self: center;
   position: relative;
   z-index: 1;
-  width: fit-content;
+  margin: -20px 0 0;
 }
 
 /* ---------- Footer ---------- */
@@ -1903,7 +1938,7 @@ button:focus-visible {
 }
 
 .lbd-answer-box:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--text-primary);
   outline-offset: 2px;
 }
 
@@ -1936,28 +1971,8 @@ button:focus-visible {
 }
 
 .lbd-reflection-input:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--text-primary);
   outline-offset: 2px;
-}
-
-.lbd-submit-btn {
-  align-self: flex-start;
-  display: inline-block;
-  appearance: none;
-  background: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  padding: 8px 20px;
-  font-family: inherit;
-  font-size: 13px;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.lbd-submit-btn:hover {
-  background: var(--accent-dark);
-  border-color: var(--accent-dark);
 }
 
 .lbd-note {
@@ -2040,10 +2055,6 @@ button:focus-visible {
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
-}
-
-.cert-actions .lbd-submit-btn {
-  align-self: auto;
 }
 
 @media (max-width: 900px) {
@@ -2821,10 +2832,10 @@ button:focus-visible {
 
 .case-summary {
   margin: 0;
-  max-width: 62ch;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--text-primary);
+  text-wrap: pretty;
 }
 
 .section-lede {
@@ -2920,29 +2931,71 @@ button:focus-visible {
   color: var(--accent-dark);
 }
 
-.case-meta-row--aligned {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 32px;
-}
-
-.case-meta-pair {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 720px) {
-  .case-meta-row--aligned,
-  .case-meta-pair {
-    grid-template-columns: 1fr;
-  }
-}
-
 .pipeline-block > .micro-label,
 .video-figure > .micro-label,
 .review-compare > .micro-label {
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-primary);
+}
+
+.about-block .btn {
+  margin-top: 16px;
+}
+
+.sidebar-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.sidebar-meta .case-meta-item {
+  gap: 4px;
+}
+
+.review-compare-times,
+.review-compare-stat-value {
+  font-variant-numeric: tabular-nums;
+}
+
+.review-compare-stage {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.avatar-face,
+.review-compare-avatar {
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.data-focus-lists .current-list li {
+  color: var(--footer-muted);
+}
+
+.proto {
+  aspect-ratio: 1953 / 1275;
+}
+
+.proto-launch {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  translate: -50% 0;
+  box-shadow: 0 2px 12px rgba(17, 17, 17, 0.2);
+}
+
+.proto-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.proto.is-live img {
+  visibility: hidden;
 }

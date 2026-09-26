@@ -25,9 +25,23 @@
         <a href="index.html#work" class="active"><span class="idx">[02]</span> Selected Works</a>
         <a href="index.html#publications"><span class="idx">[03]</span> Publications</a>
       </nav>
+      <div class="sidebar-meta">
+        <div class="case-meta-item">
+          <p class="micro-label">[Skills]</p>
+          <p>Technology Research (discourse analysis)</p>
+          <p>BERT Model Development</p>
+          <p>User Experience Research</p>
+        </div>
+        <div class="case-meta-item">
+          <p class="micro-label">[Project Company]</p>
+          <p>Varsity Tutors</p>
+        </div>
+        <div class="case-meta-item">
+          <p class="micro-label">[Role]</p>
+          <p>Lead Researcher</p>
+        </div>
+      </div>
     </div>
-
-    <div class="sidebar-placeholder" aria-hidden="true"></div>
 
     <div class="sidebar-brief">
       <div class="tldr">
@@ -35,11 +49,11 @@
         <p>An end-to-end pipeline that turns tutoring session audio into actionable quality insights &mdash; automatically:</p>
         <ol>
           <li>Identifies tutoring actions from session transcripts using discourse analysis, and</li>
-          <li>Evaluates whether those actions are pedagogically productive or counter-productive based on learning science research.</li>
+          <li>Evaluates whether those actions are pedagogically productive or counterproductive based on learning science research.</li>
         </ol>
       </div>
 
-      <a class="mini-course-link" href="courses/getting-to-know-session-scope/index.html" target="_blank" rel="noopener">[Onboarding Mini-Course for Session Scope]</a>
+      <a class="btn btn--center" href="courses/getting-to-know-session-scope/index.html" target="_blank" rel="noopener">[Onboarding Mini-Course for Session Scope]</a>
 
       <div class="preview-links">
         <a href="#" target="_blank" rel="noopener">[LinkedIn]</a>
@@ -58,29 +72,10 @@
 
     <p class="case-summary">Session Scope turns recordings of online tutoring sessions into a transcript, labels the action in every sentence, and judges whether those actions help students learn. I was the researcher on the team at Varsity Tutors, where it stayed a prototype.</p>
 
-    <div class="case-meta-row case-meta-row--aligned">
-      <div class="case-meta-item">
-        <p class="micro-label">[Skills]</p>
-        <p>Technology Research (discourse analysis)</p>
-        <p>Bert-Model Development</p>
-        <p>User Experience Research</p>
-      </div>
-      <div class="case-meta-pair">
-        <div class="case-meta-item">
-          <p class="micro-label">[Project Company]</p>
-          <p>Varsity Tutors</p>
-        </div>
-        <div class="case-meta-item">
-          <p class="micro-label">[Role]</p>
-          <p>Lead Researcher</p>
-        </div>
-      </div>
-    </div>
-
     <div class="problem-row">
       <div class="problem-text">
         <p class="micro-label">[The Problem]</p>
-        <p>Varsity Tutors approached us with the problem that although they have rich and dense audio recordings of tutoring sessions conducted on their platform, they are not gathering enough insights from said recordings.</p>
+        <p>Varsity Tutors approached us with the problem that although they have rich and dense audio recordings of tutoring sessions conducted on their platform, they are not gathering enough insights from those recordings.</p>
       </div>
 
       <div class="data-focus">
@@ -109,26 +104,27 @@
         <li><span class="pipeline-step">Audio</span><span class="pipeline-note">Tutoring session recording</span></li>
         <li><span class="pipeline-step">Transcript</span><span class="pipeline-note">Open-source transcription, hosted locally</span></li>
         <li><span class="pipeline-step">Labeled sentences</span><span class="pipeline-note">One of 30+ action tags per sentence</span></li>
-        <li><span class="pipeline-step">Evaluation</span><span class="pipeline-note">Productive or counter-productive, per learning science</span></li>
+        <li><span class="pipeline-step">Evaluation</span><span class="pipeline-note">Productive or counterproductive, per learning science</span></li>
         <li><span class="pipeline-step">Dashboard</span><span class="pipeline-note">Findings sorted by the team that needs them</span></li>
       </ol>
     </div>
 
     <div class="video-figure">
       <p class="micro-label">[The dashboard]</p>
-      <div class="video-block">
-        <img src="assets/session-scope/sessions-dashboard.png" alt="Screenshot of the Session Scope sessions dashboard, showing a filterable table of tutoring sessions with risk-area tags.">
+      <div class="video-block proto" id="proto">
+        <img src="assets/session-scope/sessions-dashboard.png" width="1953" height="1275" loading="lazy" decoding="async" alt="Screenshot of the Session Scope sessions dashboard, showing a filterable table of tutoring sessions with risk-area tags.">
+        <button type="button" class="btn proto-launch" id="proto-launch">[Try the interactive prototype]</button>
       </div>
     </div>
 
     <div class="challenge-row">
       <div class="challenge-col">
         <p class="micro-label">[Challenge 1]</p>
-        <p>Since most students are teenagers, our analysis are restricted to text transcript of sessions only, no video recordings available.</p>
+        <p>Since most students are teenagers, our analysis is restricted to session transcripts only. No video recordings are available.</p>
       </div>
       <div class="strategy-col">
         <p class="micro-label">[Strategy 1 - Transcription]</p>
-        <p>Research open sourced library for audio to text transformation hosted locally, automate transcription of audio to text so further analysis can happen.</p>
+        <p>Research an open-source library that transcribes audio to text and can be hosted locally, then automate transcription so further analysis can happen.</p>
       </div>
     </div>
 
@@ -149,7 +145,7 @@
     <div class="challenge-row">
       <div class="challenge-col">
         <p class="micro-label">[Challenge 3]</p>
-        <p>Labeling each and every sentence of a transcript is a lot of work, how do we automize this process?</p>
+        <p>Labeling each and every sentence of a transcript is a lot of work. How do we automate this process?</p>
       </div>
       <div class="strategy-col">
         <p class="micro-label">[Strategy 3 - Automation]</p>
@@ -161,14 +157,14 @@
     <div class="challenge-row">
       <div class="challenge-col">
         <p class="micro-label">[Challenge 4]</p>
-        <p>Now know what happened in the sessions, how do we know if they are helpful or not?</p>
+        <p>Now that we know what happened in the sessions, how do we know whether they were helpful?</p>
       </div>
       <div class="strategy-col">
         <p class="micro-label">[Strategy 4 - Evaluation with audience in mind]</p>
         <p>There are so many measurements of whether a session went right or wrong. To make our insights immediately valuable, we based our evaluation features on existing teams at Varsity Tutors.</p>
         <p>The first step is to figure out our audiences: who are the users for this product?</p>
         <p>The next step is to ask each user: what matters the most for you?</p>
-        <p>We developed our specific features trying to answer these questions. Features like Sentiment analysis, Scaffolding and pedagogy quality, Rules violation are included in our final product to address their primary concerns.</p>
+        <p>We developed our specific features trying to answer these questions. Features like sentiment analysis, scaffolding and pedagogy quality, and rule violations are included in our final product to address their primary concerns.</p>
       </div>
     </div>
 
@@ -183,7 +179,7 @@
         <span class="review-compare-hint">Move your mouse to compare</span>
       </div>
 
-      <div class="review-compare-stage" id="rc-stage">
+      <div class="review-compare-stage" id="rc-stage" tabindex="0" role="group" aria-label="Before and after comparison of the review tool. Press Enter to switch between them.">
         <div class="review-compare-layer">
           <div class="review-compare-timeline">
             <svg class="review-compare-play" width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><path d="M0 0L12 7L0 14V0Z" fill="#888888"/></svg>
@@ -326,7 +322,7 @@
                 <div class="review-compare-benefits">
                   <div class="review-compare-benefit" style="background:var(--rc-compliance-bg); border-color:var(--rc-compliance);">
                     <div class="review-compare-benefit-header">
-                      <img src="assets/session-scope/review-tool/avatar-compliance.png" alt="" class="review-compare-avatar">
+                      <img src="assets/session-scope/review-tool/avatar-compliance.png" alt="" width="23" height="30" class="review-compare-avatar">
                       <span style="color:var(--rc-compliance);">Compliance management</span>
                     </div>
                     <ul style="color:var(--rc-compliance);">
@@ -336,7 +332,7 @@
                   </div>
                   <div class="review-compare-benefit" style="background:var(--rc-wellbeing-bg); border-color:var(--rc-wellbeing);">
                     <div class="review-compare-benefit-header">
-                      <img src="assets/session-scope/review-tool/avatar-wellbeing.png" alt="" class="review-compare-avatar">
+                      <img src="assets/session-scope/review-tool/avatar-wellbeing.png" alt="" width="20" height="28" class="review-compare-avatar">
                       <span style="color:var(--rc-wellbeing);">Wellbeing Support</span>
                     </div>
                     <ul style="color:var(--rc-wellbeing);">
@@ -346,7 +342,7 @@
                   </div>
                   <div class="review-compare-benefit" style="background:var(--rc-pedagogy-bg); border-color:var(--rc-pedagogy);">
                     <div class="review-compare-benefit-header">
-                      <img src="assets/session-scope/review-tool/avatar-pedagogy.png" alt="" class="review-compare-avatar">
+                      <img src="assets/session-scope/review-tool/avatar-pedagogy.png" alt="" width="19" height="24" class="review-compare-avatar">
                       <span style="color:var(--rc-pedagogy);">Pedagogy quality</span>
                     </div>
                     <ul style="color:var(--rc-pedagogy);">
@@ -373,7 +369,6 @@
       <p>I was the researcher on the team, and the work had two sides.</p>
       <p><strong>Product research.</strong> I talked to the teams at Varsity Tutors to find out what each of them needed from the dashboard, and those conversations decided which features we built.</p>
       <p><strong>Technology research.</strong> I learned about discourse analysis and applied it to our product.</p>
-      <p>Session Scope stayed at the prototype stage, so there are no production results to report.</p>
     </div>
 
   </main>
@@ -504,6 +499,22 @@
     if (!raf) raf = requestAnimationFrame(loop);
   }
 
+  var hint = document.querySelector('.review-compare-hint');
+  if (hint && !supportsHover) hint.textContent = 'Tap to compare';
+
+  stage.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setTarget(target >= 50 ? 0 : 100);
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      setTarget(0);
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      setTarget(100);
+    }
+  });
+
   if (supportsHover) {
     // Tracked on window (not just the stage) so drifting off the
     // component's left/right edge pins the divider there instead of
@@ -530,6 +541,32 @@
 })();
 </script>
 
+
+<script>
+(function () {
+  var box = document.getElementById('proto');
+  var launch = document.getElementById('proto-launch');
+  if (!box || !launch) return;
+
+  var PROTO_URL = 'https://embed.figma.com/proto/Th6w1Byl2lczpuxiXd1NQ3/Dashboard'
+    + '?node-id=1031-10142&p=f&scaling=scale-down-width&content-scaling=fixed'
+    + '&starting-point-node-id=1031%3A10142&page-id=1028%3A4776&hide-ui=1&embed-host=share';
+
+  // The Figma player is only requested on click, so the page loads without
+  // it and the embed can't capture scrolling until the reader opts in.
+  launch.addEventListener('click', function () {
+    var frame = document.createElement('iframe');
+    frame.className = 'proto-frame';
+    frame.src = PROTO_URL;
+    frame.title = 'Session Scope dashboard, interactive prototype';
+    frame.setAttribute('allowfullscreen', '');
+    box.classList.add('is-live');
+    box.appendChild(frame);
+    launch.remove();
+    frame.focus({ preventScroll: true });
+  });
+})();
+</script>
 
 </body>
 </html>
