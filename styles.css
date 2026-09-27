@@ -3088,3 +3088,80 @@ button:focus-visible {
 .glance-btn {
   margin-top: 4px;
 }
+
+/* ---------- Custom cursor (see cursor.js) ---------- */
+
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Keep the real cursor where a dot would be wrong: typing, and inside the
+   embedded prototype. */
+html.has-custom-cursor textarea,
+html.has-custom-cursor input,
+html.has-custom-cursor select {
+  cursor: text !important;
+}
+
+html.cursor-away,
+html.cursor-away * {
+  cursor: auto !important;
+}
+
+.cursor-dot,
+.cursor-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: opacity 150ms ease-out, scale 150ms ease-out;
+}
+
+.cursor-dot.is-active {
+  scale: 1.75;
+}
+
+.cursor-line {
+  background: rgba(17, 17, 17, 0.16);
+  transition: opacity 150ms ease-out;
+}
+
+.cursor-line--v {
+  width: 1px;
+  height: 100vh;
+}
+
+.cursor-line--h {
+  width: 100vw;
+  height: 1px;
+}
+
+html.has-custom-cursor:not(.cursor-away) .cursor-dot,
+html.has-custom-cursor:not(.cursor-away) .cursor-line {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-line {
+    display: none;
+  }
+}
+
+/* Lines are frozen at their resting breaks by title-motion.js so the
+   weight animation never re-wraps the title. */
+.title-line {
+  display: block;
+  white-space: nowrap;
+  transform-origin: 0 100%;
+}
