@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sandy Zhao — Portfolio</title>
-<meta name="description" content="Instructional design and learning product design portfolio.">
+<meta name="description" content="Instructional designer and learning engineer building courses, tools, and research that help people teach and learn.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -51,8 +51,8 @@
     <p class="annotation">[ Instructional Design / Learning Engineering ]</p>
 
     <section id="about" class="hero">
-      <p>I specialize in maximizing pedagogical output through instructional design and learning product design&mdash;<br>
-      elevating both content and delivery in education systems.</p>
+      <p>I&rsquo;m an instructional designer and learning engineer.<br>
+      I build courses, tools, and research that help people teach and learn.</p>
     </section>
 
     <section id="work" class="group">
@@ -106,6 +106,12 @@
     <section id="publications" class="group">
       <h2>Publications</h2>
       <div class="table" role="table">
+        <div class="row row--static" role="row">
+          <span class="col year" role="cell">In press</span>
+          <span class="col title" role="cell" title="Retrieval-Augmented Lesson Generation with Large Language Models for Scenario-Based Tutor Training">Retrieval-Augmented Lesson Generation with Large Language Models for Scenario-Based Tutor Training</span>
+          <span class="col type" role="cell">Learning Product Design</span>
+          <span class="col view" role="cell">Forthcoming</span>
+        </div>
         <a class="row" role="row" href="https://link.springer.com/chapter/10.1007/978-3-032-03870-8_18" target="_blank" rel="noopener">
           <span class="col year" role="cell">2025</span>
           <span class="col title" role="cell">Automatic Large Language Models Creation of Interactive Learning Lessons</span>
@@ -200,6 +206,41 @@
 })();
 </script>
 
+
+<script>
+(function () {
+  // The page's decorative vertical grid line sits a little left of the
+  // content column, so the table's row lines stop short of it. Measure the
+  // gap and extend each row's line left to meet it -- but only when that
+  // line lies in the space between the sidebar and the content (allowing a
+  // few px of overlap with the sidebar's edge), and never
+  // when the grid is hidden (small screens).
+  var grid = document.querySelector('.grid-lines');
+  var sidebar = document.querySelector('.sidebar');
+  var tables = document.querySelectorAll('.table');
+  if (!grid || !tables.length) return;
+
+  function update() {
+    var g = grid.getBoundingClientRect();
+    var visible = getComputedStyle(grid).display !== 'none' && g.width > 0;
+    var sidebarRight = sidebar ? sidebar.getBoundingClientRect().right : 0;
+    tables.forEach(function (t) {
+      var join = 0;
+      if (visible) {
+        var left = t.getBoundingClientRect().left;
+        var step = g.width / 4;
+        var lineX = g.left + Math.floor((left - g.left + 0.5) / step) * step;
+        if (lineX >= sidebarRight - 6 && lineX <= left) join = Math.round(left - lineX);
+      }
+      t.style.setProperty('--grid-join', join + 'px');
+    });
+  }
+
+  update();
+  window.addEventListener('resize', update);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(update);
+})();
+</script>
 
 </body>
 </html>

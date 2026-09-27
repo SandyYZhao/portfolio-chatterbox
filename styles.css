@@ -12,6 +12,7 @@
   --footer-muted: #8c8a85;
   --sidebar-width: 302px;
   --gutter: 80px;
+  --font-serif: "Literata", Georgia, serif;
 }
 
 * {
@@ -235,14 +236,15 @@ button:focus-visible {
 
 .hero p {
   margin: 0;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-serif);
   font-optical-sizing: auto;
   font-weight: 500;
   font-size: 44px;
   line-height: 1.25;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   color: var(--text-primary);
   max-width: 772px;
+  text-wrap: balance;
 }
 
 .group {
@@ -262,6 +264,7 @@ button:focus-visible {
 }
 
 .table {
+  --grid-join: 0px;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -272,7 +275,8 @@ button:focus-visible {
   grid-template-columns: 80px 1fr 160px 100px;
   align-items: center;
   column-gap: 16px;
-  padding: 8px 16px;
+  margin-left: calc(var(--grid-join) * -1);
+  padding: 8px 16px 8px calc(16px + var(--grid-join));
   border-bottom: 1px solid var(--border);
   transition: background 0.15s ease;
 }
@@ -470,12 +474,12 @@ button:focus-visible {
 .case-title {
   margin: 0;
   text-wrap: balance;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-serif);
   font-optical-sizing: auto;
   font-weight: 500;
   font-size: 44px;
   line-height: 1.25;
-  letter-spacing: -2px;
+  letter-spacing: -1.5px;
   color: var(--text-primary);
 }
 
@@ -1480,7 +1484,7 @@ button:focus-visible {
 }
 
 .footer-brand .footer-name {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-serif);
   font-weight: 600;
   font-size: 28px;
   color: var(--text-primary);
@@ -2033,7 +2037,7 @@ button:focus-visible {
   position: relative;
   z-index: 2;
   margin: 0 0 8px;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-serif);
   font-optical-sizing: auto;
   font-weight: 500;
   font-size: 20px;
@@ -2373,7 +2377,7 @@ button:focus-visible {
 
 .xm-scene-title {
   margin: 0;
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-serif);
   font-weight: 500;
   font-size: 28px;
   line-height: 1.2;
@@ -2599,7 +2603,7 @@ button:focus-visible {
 }
 
 .xm-teaser-title {
-  font-family: "Fraunces", Georgia, serif;
+  font-family: var(--font-serif);
   font-weight: 500;
   font-size: 20px;
   line-height: 1.25;
@@ -2941,9 +2945,6 @@ button:focus-visible {
   color: var(--text-primary);
 }
 
-.about-block .btn {
-  margin-top: 16px;
-}
 
 .sidebar-meta {
   display: flex;
@@ -3029,4 +3030,46 @@ button:focus-visible {
 
 .project-nav .btn:only-child {
   margin-left: auto;
+}
+
+.row--static {
+  cursor: default;
+}
+
+.row--static:hover {
+  background: none;
+}
+
+.row--static .view {
+  color: var(--text-secondary);
+}
+
+.course-shots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.course-shots img,
+.glance-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+  .course-shots {
+    grid-template-columns: 1fr;
+  }
+}
+
+.glance-link {
+  display: block;
+}
+
+.glance-btn {
+  margin-top: 4px;
 }
