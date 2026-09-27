@@ -134,14 +134,14 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 16px;
 }
 
 .glance-card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 12px 10px 4px;
+  gap: 4px;
+  padding: 0;
 }
 
 .glance-status {
@@ -149,7 +149,7 @@ button:focus-visible {
   align-items: center;
   gap: 6px;
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text-primary);
 }
@@ -165,18 +165,18 @@ button:focus-visible {
 .glance-location {
   margin: 0;
   font-size: 12px;
-  color: var(--text-meta);
+  color: var(--text-secondary);
 }
 
 .glance-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 2px;
+  margin-top: 12px;
 }
 
 .glance-tag {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   padding: 3px 8px;
   border-radius: 100px;
@@ -190,7 +190,7 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0 10px 10px;
+  padding: 0 0 10px;
   font-weight: 500;
   font-size: 10px;
   letter-spacing: 0.3px;
@@ -1502,12 +1502,14 @@ button:focus-visible {
   gap: 10px;
 }
 
-.footer-nav .footer-nav-label {
+.footer-nav .footer-nav-label,
+.footer-contact .footer-nav-label {
   font-size: 11px;
   color: var(--footer-muted);
 }
 
-.footer-nav a {
+.footer-nav a,
+.footer-contact a {
   font-size: 12px;
   color: var(--text-muted);
 }
@@ -1516,8 +1518,21 @@ button:focus-visible {
   color: var(--accent);
 }
 
-.footer-nav a:hover {
+.footer-nav a:hover,
+.footer-contact a:hover {
   color: var(--text-primary);
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.footer-contact a {
+  width: fit-content;
+  transition: color 150ms ease-out;
 }
 
 .footer-bottom {
