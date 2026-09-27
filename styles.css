@@ -91,7 +91,7 @@ button:focus-visible {
 .sidebar-top {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .name {
@@ -110,11 +110,13 @@ button:focus-visible {
   color: var(--text-secondary);
   width: 270px;
   max-width: 100%;
+  margin-top: -5px;
 }
 
 .side-nav a {
+  padding: 5px 0;
   color: var(--text-secondary);
-  transition: color 0.15s ease;
+  transition: color 0.15s ease-out;
 }
 
 .side-nav a:hover {
@@ -192,7 +194,7 @@ button:focus-visible {
   font-size: 10px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .preview-links a {
@@ -407,7 +409,7 @@ button:focus-visible {
 .sidebar-brief {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -2947,7 +2949,7 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 8px;
 }
 
 .sidebar-meta .case-meta-item {
@@ -2998,4 +3000,33 @@ button:focus-visible {
 
 .proto.is-live img {
   visibility: hidden;
+}
+
+/* Sidebar hierarchy: small gray labels over regular-size values, and the
+   summary group set apart from the facts above it. */
+.sidebar-meta .micro-label,
+.sidebar-brief .micro-label {
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary);
+}
+
+.sidebar-brief .tldr .micro-label {
+  margin: 0 0 6px;
+}
+
+.project-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding-top: 24px;
+  border-top: 0.5px solid var(--border);
+}
+
+.project-nav .btn:only-child {
+  margin-left: auto;
 }
