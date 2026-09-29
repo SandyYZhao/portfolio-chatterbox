@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandy (Yiyang) Zhao — Resume</title>
+<meta name="description" content="Instructional Designer &amp; Learning Experience Researcher">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #edecea;
+    --text-primary: #111111;
+    --text-secondary: #666666;
+    --text-meta: #777777;
+    --accent: #b05c38;
+    --accent-dark: #7a3e25;
+    --border: #c8c5be;
+    --card-bg: #f9f9f9;
+    --gutter: 64px;
+    --font-serif: "Literata", Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  a:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+  }
+
+  /* Decorative background grid, matches the portfolio site */
+  .grid-lines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image: repeating-linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.08) 0,
+      rgba(0, 0, 0, 0.08) 1px,
+      transparent 1px,
+      transparent 25%
+    );
+    max-width: 900px;
+    margin: 0 auto;
+    left: var(--gutter);
+    right: var(--gutter);
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 772px;
+    margin: 0 auto;
+    padding: 56px var(--gutter) 80px;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 32px;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    transition: color 150ms ease-out;
+  }
+
+  .back-link:hover { color: var(--text-primary); }
+
+  .micro-label {
+    margin: 0 0 8px;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--text-meta);
+  }
+
+  header.hero { margin-bottom: 28px; }
+
+  h1.name-title {
+    margin: 0 0 6px;
+    font-family: var(--font-serif);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: var(--text-primary);
+  }
+
+  .tagline {
+    margin: 0 0 14px;
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+
+  .contact {
+    margin: 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .contact .dot {
+    margin: 0 8px;
+    color: var(--border);
+  }
+
+  .contact a {
+    color: var(--accent);
+    transition: color 150ms ease-out;
+  }
+
+  .contact a:hover { color: var(--accent-dark); }
+
+  .summary {
+    margin: 0 0 40px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+  }
+
+  section { margin-bottom: 40px; }
+  section:last-of-type { margin-bottom: 0; }
+
+  .entry-row {
+    display: flex;
+    gap: 24px;
+    padding: 16px 0;
+    border-top: 0.5px solid var(--border);
+  }
+
+  section > .entry-row:last-child {
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .entry-dates {
+    flex: 0 0 108px;
+    padding-top: 1px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-meta);
+    white-space: nowrap;
+  }
+
+  .entry-body { flex: 1 1 auto; min-width: 0; }
+
+  .entry-title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  .entry-org {
+    margin: 2px 0 0;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  ul.bullets {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  ul.bullets li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-primary);
+  }
+
+  ul.bullets li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--text-meta);
+  }
+
+  .pub-entry-body p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .pub-entry-body em {
+    color: var(--text-primary);
+    font-style: italic;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 16px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .skill-pill {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 100px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+
+  footer.page-footer {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    color: var(--text-meta);
+  }
+
+  @media print {
+    .grid-lines,
+    .back-link { display: none; }
+    body { background: #fff; }
+    .page { padding: 0.4in 0.5in; max-width: none; }
+    .summary { border: 1px solid #999; }
+    .skill-pill { border: 1px solid #999; }
+    footer.page-footer { display: none; }
+  }
+
+  @media (max-width: 560px) {
+    :root { --gutter: 24px; }
+    h1.name-title { font-size: 30px; }
+    .page { padding: 40px var(--gutter) 60px; }
+    .entry-row { flex-direction: column; gap: 4px; }
+    .entry-dates { flex: none; }
+  }
+
+  /* Highlighter: a colored stroke wipes in behind key phrases the first
+     time they scroll into view (see the script at the end of the body). */
+  mark.hl {
+    background-color: transparent;
+    background-image: linear-gradient(rgba(176, 92, 56, 0.28), rgba(176, 92, 56, 0.28));
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 0% 100%;
+    color: inherit;
+    border-radius: 0.3em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0.02em 0.2em;
+    margin: 0 -0.2em;
+    transition: background-size 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  mark.hl.is-visible {
+    background-size: 100% 100%;
+  }
+
+  @media print {
+    mark.hl {
+      background-size: 100% 100%;
+      transition: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    mark.hl {
+      transition: none;
+      background-size: 100% 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-lines" aria-hidden="true"></div>
+
+<div class="page">
+  <a class="back-link" href="https://sandyzhao.com">[Back to sandyzhao.com]</a>
+
+  <header class="hero">
+    <p class="micro-label">[Resume]</p>
+    <h1 class="name-title">Sandy (Yiyang) Zhao</h1>
+    <p class="tagline">Instructional Designer &amp; Learning Experience Researcher</p>
+    <p class="contact">
+      (612) 433-9091<span class="dot">·</span><a href="mailto:sandyzhao.work@gmail.com">sandyzhao.work@gmail.com</a><span class="dot">·</span>Pittsburgh, PA<span class="dot">·</span><a href="https://sandyzhao.com">sandyzhao.com</a>
+    </p>
+  </header>
+
+  <p class="summary">
+    Instructional designer and learning experience researcher with 2 years of experience in building
+    research-grounded training and eLearning content for audiences ranging from K-12 classrooms to novice
+    tutors to university faculty. Skilled at <mark class="hl">partnering with subject matter experts</mark> to translate complex
+    research and technical material into accessible, engaging <mark class="hl">learning experiences</mark>, and at owning a
+    <mark class="hl">full product cycle</mark>.
+  </p>
+
+  <section>
+    <p class="micro-label">[Experience]</p>
+
+    <div class="entry-row">
+      <p class="entry-dates">Jan 2024 –<br>Feb 2026</p>
+      <div class="entry-body">
+        <p class="entry-title">Instructional Designer</p>
+        <p class="entry-org">Carnegie Mellon University, Open Learning Initiative — Pittsburgh, PA</p>
+        <ul class="bullets">
+          <li>Collaborated with multiple SMEs and stakeholders to design, develop, and deliver higher education courses.</li>
+          <li>Designed and built <mark class="hl">30 interactive eLearning modules</mark> and updated existing courses using OLI Torus and the university's LMS.</li>
+          <li>Conducted learning-objective-level <mark class="hl">data analysis</mark> and gained insights from course evaluation to iterate on and <mark class="hl">improve existing courses</mark>.</li>
+          <li>Designed and developed interactive dashboards to present course data and training metrics to stakeholders.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry-row">
+      <p class="entry-dates">Jan 2024 –<br>Jun 2026</p>
+      <div class="entry-body">
+        <p class="entry-title">Learning Experience Researcher</p>
+        <p class="entry-org">Carnegie Mellon University, Personalized Learning Squared — Pittsburgh, PA</p>
+        <ul class="bullets">
+          <li>Developed scenario-based eLearning onboarding modules that translated research-based teaching strategies into accessible training content for <mark class="hl">500+ novice tutors</mark>.</li>
+          <li>Designed and built <mark class="hl">an LLM-based content generation web app using RAG</mark> that allows users to customize scenario-based training content.</li>
+          <li>Managed the full research lifecycle for a study evaluating the above-mentioned web app's efficacy — IRB approval, participant recruitment, data analysis, and <mark class="hl">publishing results in ed-tech journals</mark>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry-row">
+      <p class="entry-dates">Jan 2024 –<br>Aug 2024</p>
+      <div class="entry-body">
+        <p class="entry-title">Lead Learning Experience Researcher</p>
+        <p class="entry-org">Varsity Tutors — St. Louis, MO</p>
+        <ul class="bullets">
+          <li>Designed and implemented a session assessment dashboard using LLM-powered discourse analysis that automatically examines, assesses, and summarizes <mark class="hl">600+ tutoring sessions per day</mark>.</li>
+          <li>Facilitated regular check-ins and 3 rounds of user research with SMEs, expert staff, and students to gather feedback and align on final design.</li>
+          <li>Delivered training documentation and troubleshooting support for a newly developed dashboard tool.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="micro-label">[Education]</p>
+
+    <div class="entry-row">
+      <p class="entry-dates">Aug 2023 –<br>Dec 2024</p>
+      <div class="entry-body">
+        <p class="entry-title">Masters in Educational Technology and Applied Learning Science</p>
+        <p class="entry-org">Carnegie Mellon University — GPA: 3.87/4.0</p>
+      </div>
+    </div>
+
+    <div class="entry-row">
+      <p class="entry-dates">Sep 2019 –<br>May 2023</p>
+      <div class="entry-body">
+        <p class="entry-title">B.S. in Psychology, Minor in Data Science</p>
+        <p class="entry-org">Macalester College — GPA: 3.85/4.0</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="micro-label">[Publications]</p>
+
+    <div class="entry-row">
+      <p class="entry-dates">2025</p>
+      <div class="entry-body pub-entry-body">
+        <p>Lin, J., Rao, J., Zhao, S. Y., Wang, Y., Gurung, A., Barany, A., ... &amp; Koedinger, K. R. (2025, September). Automatic Large Language Models Creation of Interactive Learning Lessons. In <em>European Conference on Technology Enhanced Learning</em> (pp. 259-274). Cham: Springer Nature Switzerland.</p>
+      </div>
+    </div>
+
+    <div class="entry-row">
+      <p class="entry-dates">2024</p>
+      <div class="entry-body pub-entry-body">
+        <p>Burgund, E. D., Zhao, Y., Laubach, I. N., &amp; Abebaw, E. F. (2024). Different features for different races: Tracking the eyes of Asian, Black, and White participants viewing Asian, Black, and White faces. <em>PloS one</em>, 19(9), e0310638.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="micro-label">[Skills]</p>
+    <div class="skills-grid">
+      <span class="skill-pill">Instructional Design &amp; ADDIE</span>
+      <span class="skill-pill">Adult Learning Theory</span>
+      <span class="skill-pill">Backward Educational Design</span>
+      <span class="skill-pill">Learning Analytics &amp; Training Metrics</span>
+      <span class="skill-pill">Stakeholder &amp; Partnership Management</span>
+      <span class="skill-pill">Research Process (IRB, Recruitment, Data Analysis)</span>
+      <span class="skill-pill">LMS &amp; OLI Torus</span>
+      <span class="skill-pill">Articulate 360 (Storyline/Rise)</span>
+      <span class="skill-pill">Zoom &amp; Microsoft Teams</span>
+      <span class="skill-pill">Multimedia Production</span>
+      <span class="skill-pill">Figma &amp; Photoshop</span>
+      <span class="skill-pill">Video Editing</span>
+    </div>
+  </section>
+
+  <footer class="page-footer">Last updated September 2026</footer>
+</div>
+
+<script>
+(function () {
+  var marks = document.querySelectorAll('mark.hl');
+  if (!marks.length) return;
+
+  // Paint the highlight in immediately for anyone who prefers less motion,
+  // or if this browser can't observe scroll position.
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced || !('IntersectionObserver' in window)) {
+    marks.forEach(function (m) { m.classList.add('is-visible'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      // Small pause before the stroke starts, so it reads as a deliberate
+      // mark rather than something that happens the instant text scrolls in.
+      setTimeout(function () { el.classList.add('is-visible'); }, 400);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.1 });
+
+  marks.forEach(function (m) { io.observe(m); });
+})();
+</script>
+
+</body>
+</html>
