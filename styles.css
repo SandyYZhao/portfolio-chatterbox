@@ -3171,3 +3171,189 @@ html.has-custom-cursor:not(.cursor-away) .cursor-line {
   white-space: nowrap;
   transform-origin: 0 100%;
 }
+
+/* ---------- Resume page ---------- */
+
+.resume-tagline {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.resume-contact {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.resume-contact .dot {
+  margin: 0 8px;
+  color: var(--border);
+}
+
+.resume-contact a {
+  color: var(--accent);
+  transition: color 150ms ease-out;
+}
+
+.resume-contact a:hover {
+  color: var(--accent-dark);
+}
+
+.resume-summary {
+  margin: 24px 0 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.resume-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resume-row {
+  display: flex;
+  gap: 24px;
+  padding: 16px 0;
+  border-top: 0.5px solid var(--border);
+}
+
+.resume-section > .resume-row:last-child {
+  border-bottom: 0.5px solid var(--border);
+}
+
+.resume-dates {
+  flex: 0 0 108px;
+  margin: 0;
+  padding-top: 1px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-meta);
+  white-space: nowrap;
+}
+
+.resume-entry {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.resume-entry-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.resume-entry-org {
+  margin: 2px 0 0;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.resume-bullets {
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.resume-bullets li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-primary);
+}
+
+.resume-bullets li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--text-meta);
+}
+
+.resume-pub p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.resume-pub em {
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .resume-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .resume-dates {
+    flex: none;
+  }
+}
+
+/* Highlighter: a colored stroke wipes in behind key phrases the first
+   time they scroll into view (see the observer script on resume.html). */
+mark.hl {
+  background-color: transparent;
+  background-image: linear-gradient(rgba(176, 92, 56, 0.28), rgba(176, 92, 56, 0.28));
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 0% 100%;
+  color: inherit;
+  border-radius: 0.3em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0.02em 0.2em;
+  margin: 0 -0.2em;
+  transition: background-size 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+mark.hl.is-visible {
+  background-size: 100% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  mark.hl {
+    transition: none;
+    background-size: 100% 100%;
+  }
+}
+
+/* Printing a page (the resume, in practice) shouldn't include the site
+   chrome around the actual content. */
+@media print {
+  .grid-lines,
+  .sidebar,
+  .site-footer {
+    display: none;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0.4in 0.5in;
+    gap: 0;
+  }
+
+  .resume-summary,
+  .glance-tag {
+    border-color: #999;
+  }
+
+  mark.hl {
+    background-size: 100% 100%;
+    transition: none;
+  }
+}
