@@ -82,6 +82,7 @@ button:focus-visible {
   top: 40px;
   width: var(--sidebar-width);
   flex-shrink: 0;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -109,8 +110,7 @@ button:focus-visible {
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-secondary);
-  width: 270px;
-  max-width: 100%;
+  width: 100%;
   margin-top: -5px;
 }
 
@@ -417,7 +417,13 @@ button:focus-visible {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  scrollbar-width: thin;
+  /* Content normally fits; this stays a silent safety valve for very short
+     windows, so the scrollbar itself shouldn't be visible. */
+  scrollbar-width: none;
+}
+
+.sidebar-brief::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar-brief > :first-child {
