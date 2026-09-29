@@ -3174,32 +3174,6 @@ html.has-custom-cursor:not(.cursor-away) .cursor-line {
 
 /* ---------- Resume page ---------- */
 
-.resume-tagline {
-  margin: 0;
-  font-size: 15px;
-  color: var(--text-secondary);
-}
-
-.resume-contact {
-  margin: 8px 0 0;
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.resume-contact .dot {
-  margin: 0 8px;
-  color: var(--border);
-}
-
-.resume-contact a {
-  color: var(--accent);
-  transition: color 150ms ease-out;
-}
-
-.resume-contact a:hover {
-  color: var(--accent-dark);
-}
-
 .resume-summary {
   margin: 24px 0 0;
   background: #fff;
